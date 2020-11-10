@@ -1,0 +1,68 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js run dev
+
+PATH: 
+  C:\Program Files\Microsoft MPI\Bin\;C:\Windows\System32;C:\Program Files\Git\cmd;C:\Program Files\PostgreSQL\12\bin;C:\Users\Dotman\Desktop\Complete React\VSCode-win32-x64-1.43.2\bin;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Android\Android Studio\jre;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Android\tools\lib;C:\Android\tools\lib\emulator;C:\Android\tools\lib\platform-tools;C:\Android\tools\lib\platforms;C:\Android\tools\lib\tools\bin;C:\Android\tools\lib\tools;C:\Users\Dotman\AppData\Local\Android\tools\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\Tools;C:\Users\Dotman\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Android\Android Studio\jre;C:\Users\Dotman\AppData\Local\GitHubDesktop\bin;C:\Program Files\heroku\bin;C:\Users\Dotman\AppData\Roaming\npm\expo;C:\Windows\System32;C:\Users\Dotman\AppData\Roaming\npm;C:\Users\Dotman\AppData\Local\Yarn\bin;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Android\tools\lib\tools\bin;C:\Users\Dotman\AppData\Local\Android\tools\bin;C:\Users\Dotman\AppData\Local\Microsoft\WindowsApps;C:\Users\Dotman\AppData\Roaming\nvm;C:\Program Files\nodejs
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  14.0.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  SyntaxError: C:\Users\Dotman\Desktop\Foodtime\package.json: Unexpected token / in JSON at position 945
+      at JSON.parse (<anonymous>)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Program Files (x86)\Yarn\lib\cli.js:310:30)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "foodtimeserver",
+    "version": "1.0.0",
+    "description": "Backend for foodtime app",
+    "main": "server.js",
+    "engines": {
+      "node": "14.0.0"
+    },
+    "scripts": {
+      "start": "node server",
+      "server": "nodemon server",
+      "client": "npm start --prefix client",
+      "dev": "concurrently \"npm run server\" \"npm run client\"",
+      "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    },
+    "author": "Lawal Oladotun",
+    "license": "ISC",
+    "dependencies": {
+      "@sendgrid/mail": "^7.4.0",
+      "axios": "^0.19.2",
+      "bcryptjs": "^2.4.3",
+      "cloudinary": "^1.22.0",
+      "dotenv": "^8.2.0",
+      "email-templates": "^7.0.5",
+      "express": "^4.17.1",
+      "express-validator": "^6.6.0",
+      "jsonwebtoken": "^8.5.1",
+      "loadash": "^1.0.0",
+      "mongoose": "^5.9.20",
+      "multer": "^1.4.2",
+      "multer-storage-cloudinary": "^4.0.0",
+      "nodemailer": "^6.4.10",
+      // "nodemailer-sendgrid-transport": "^0.2.0",
+      "npm": "^7.0.9",
+      "path": "^0.12.7",
+      "react-onclickoutside": "^6.9.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

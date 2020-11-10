@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Confirmation component should render Confirmation Page component 1`] = `
+<Fragment>
+  <styled.div>
+    <styled.div>
+      <styled.h2>
+        Hey, 
+         type in your new password 
+      </styled.h2>
+      <form
+        onSubmit={[Function]}
+      >
+        <styled.input
+          minLength="6"
+          name="newPassword"
+          onChange={[Function]}
+          placeholder="New Password"
+          required={true}
+          type="password"
+          value=""
+        />
+        <styled.input
+          minLength="6"
+          name="confirmPassword"
+          onChange={[Function]}
+          placeholder="Re-enter New Password"
+          required={true}
+          type="password"
+          value=""
+        />
+        <CustomButton
+          type="submit"
+        >
+           Submit 
+        </CustomButton>
+      </form>
+    </styled.div>
+  </styled.div>
+</Fragment>
+`;

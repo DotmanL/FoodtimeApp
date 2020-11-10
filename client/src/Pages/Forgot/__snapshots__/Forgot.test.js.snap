@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Forgot component should render Forgot component 1`] = `
+<Fragment>
+  <styled.div>
+    <styled.div>
+      <styled.h2>
+        Forgot your password, type in your email to reset your password
+      </styled.h2>
+      <form
+        onSubmit={[Function]}
+      >
+        <styled.input
+          name="email"
+          onChange={[Function]}
+          placeholder="Type in your email address"
+          required={true}
+          type="email"
+          value=""
+        />
+        <CustomButton
+          type="submit"
+        >
+           Submit
+        </CustomButton>
+      </form>
+    </styled.div>
+  </styled.div>
+</Fragment>
+`;

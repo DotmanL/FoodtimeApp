@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Confirmation component should render Confirmation Page component 1`] = `
+<Redirect
+  to="/signin"
+/>
+`;

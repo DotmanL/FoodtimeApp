@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` expect to return HomePage Component 1`] = `
+<Fragment>
+  <styled.div>
+    <styled.div>
+      <styled.h1>
+         Order your meals from the Best Restaurants
+      </styled.h1>
+      <styled.p>
+         Everywhere in Lagos
+      </styled.p>
+      <Search />
+    </styled.div>
+    <styled.div>
+      <styled.div>
+        <CountUp
+          decimal="."
+          decimals={0}
+          delay={null}
+          duration={null}
+          easingFn={null}
+          end={30}
+          formattingFn={null}
+          onEnd={[Function]}
+          onPauseResume={[Function]}
+          onReset={[Function]}
+          onStart={[Function]}
+          onUpdate={[Function]}
+          prefix=""
+          preserveValue={false}
+          redraw={false}
+          separator=""
+          start={0}
+          startOnMount={true}
+          suffix=""
+          useEasing={true}
+        />
+         
+        <p
+          style={
+            Object {
+              "marginLeft": "5px",
+            }
+          }
+        >
+          Restaurants
+        </p>
+        <CountUp
+          decimal="."
+          decimals={0}
+          delay={null}
+          duration={null}
+          easingFn={null}
+          end={30}
+          formattingFn={null}
+          onEnd={[Function]}
+          onPauseResume={[Function]}
+          onReset={[Function]}
+          onStart={[Function]}
+          onUpdate={[Function]}
+          prefix=""
+          preserveValue={false}
+          redraw={false}
+          separator=""
+          start={0}
+          startOnMount={true}
+          style={
+            Object {
+              "marginLeft": "50px",
+            }
+          }
+          suffix=""
+          useEasing={true}
+        />
+         
+        <p
+          style={
+            Object {
+              "marginLeft": "5px",
+            }
+          }
+        >
+           Registered Users
+        </p>
+      </styled.div>
+    </styled.div>
+    <styled.div>
+      <styled.h1>
+         What we offer ?
+      </styled.h1>
+      <styled.p>
+        At Foodtime, we make it easier for you to order various meals and drinks from various eateries all over Lagos, Nigeria. we enable catering outfits and eateries all over Lagos to put their meals and drinks online.
+         
+      </styled.p>
+      <styled.div>
+        <styled.div>
+          <styled.h2>
+             Easy 3 Steps Order 
+          </styled.h2>
+        </styled.div>
+        <styled.div>
+          <ScrollAnimation
+            animateIn="bounceInLeft"
+            animateOnce={false}
+            animatePreScroll={true}
+            delay={0}
+            duration={2}
+            initiallyVisible={false}
+            offset={150}
+          >
+            <styled.div>
+              <Styled(Component) />
+              <styled.div>
+                 Browse through our menu 
+              </styled.div>
+            </styled.div>
+          </ScrollAnimation>
+          <ScrollAnimation
+            animateIn="bounceInRight"
+            animateOnce={false}
+            animatePreScroll={true}
+            delay={0}
+            duration={2}
+            initiallyVisible={false}
+            offset={150}
+          >
+            <styled.div>
+              <Styled(Component) />
+              <styled.div>
+                 Fill your Tray 
+              </styled.div>
+            </styled.div>
+          </ScrollAnimation>
+          <ScrollAnimation
+            animateIn="bounceInRight"
+            animateOnce={false}
+            animatePreScroll={true}
+            delay={0}
+            duration={2}
+            initiallyVisible={false}
+            offset={150}
+          >
+            <styled.div>
+              <Styled(Component) />
+              <styled.div>
+                 Pickup or Delivery
+              </styled.div>
+            </styled.div>
+          </ScrollAnimation>
+        </styled.div>
+      </styled.div>
+    </styled.div>
+    <styled.div>
+      <styled.h4>
+         Go through our various delicacies and be wowed!!! 
+      </styled.h4>
+      <a
+        href="/menu"
+      >
+         
+        <styled.button>
+           Browse Menu 
+        </styled.button>
+         
+      </a>
+    </styled.div>
+  </styled.div>
+</Fragment>
+`;

@@ -1,0 +1,7 @@
+export const GET_PRODUCTS = 'GET_PRODUCTS';
+export const PRODUCTS_ERROR = 'PRODUCTS_ERROR';
+export const GET_PRODUCT = 'GET_PRODUCT';
+export const ADD_PRODUCT = 'ADD_PRODUCT';
+export const TOGGLE_CART = 'TOGGLE_CART';
+export const REDUCE_PRODUCT = 'REDUCE_PRODUCT';
+export const CLEAR_CART_PRODUCT = 'CLEAR_CART_PRODUCT';

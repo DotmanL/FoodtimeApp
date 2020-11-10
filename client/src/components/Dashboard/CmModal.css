@@ -1,0 +1,32 @@
+.customOverlay {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+@media screen and (max-width: 800px) {
+  .customOverlay {
+    background: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.customModal {
+  background: black;
+  max-width: 550px;
+  padding: 10px 10px 10px 10px;
+  margin-top: 30vh;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+
+}
+
+
+@media screen and (max-width: 800px) {
+  .customModal {
+    background: black;
+    margin-top: 20vh;
+    width: 80vw;
+    max-width: 95%;
+
+
+  }
+}
