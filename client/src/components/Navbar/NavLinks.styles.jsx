@@ -6,12 +6,11 @@ import { Profile } from '@styled-icons/remix-fill/Profile';
 export const NavItem = styled(Link)`
   text-decoration: none;
   display: inline-block;
-  color: white;
+  color: #eb392e;
   white-space: nowrap;
   font-weight: 700;
-  font-size: 15px;
-  margin: 1vw 0.2vw;
-  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  margin: 10px 30px;
   padding-top: 1vh;
   transition: all 200ms ease-in;
   cursor: pointer;
@@ -149,12 +148,11 @@ export const Opt = styled(Link)`
 export const SignUpItem = styled.h4`
   text-decoration: none;
   display: inline-block;
-  color: white;
+  color: #eb392e;
   white-space: nowrap;
   font-weight: 700;
-  font-size: 15px;
-  margin: 1vw 1vw;
-  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  margin: 10px 10px;
   padding-top: 1vh;
   transition: all 200ms ease-in;
   cursor: pointer;

@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import { signout } from '../../Redux/User/user.actions';
 import NavbarLinks from './NavLinks';
 import NavMobile from './NavMobile';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import CartIcon from '../Cart/CartIcon';
 import CartDropDown from '../CartDropDown/CartDropDown';
-//import onClickOutside from "react-onclickoutside";
+
 import {
   Navigation,
   Toggle,
+  LogoContainer,
   Logo,
   LogoText,
   Navbox,
@@ -40,7 +40,6 @@ const Nav = ({
       setScrolledDownEnough(scrolledDownEnough);
     };
 
-    // Nav.handleOnClickOutside = () =>  setNavbarOpen(false)
     window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => window.removeEventListener('scroll', handleScroll);
@@ -56,16 +55,17 @@ const Nav = ({
         {navbarOpen ? <Hamburger open /> : <Hamburger />}
       </Toggle>
 
-      <Logo>
+      <LogoContainer>
+        <Logo />
         <LogoText to="/">Foodtime</LogoText>
-      </Logo>
+      </LogoContainer>
 
       <NavContainer onClick={() => setNavbarOpen(false)}>
         {!loading && isAuthenticated ? (
           <>
-            <Link to={`/profile/${user && user._id}`}>
+            {/* <Link to={`/profile/${user && user._id}`}>
               <Dash />
-            </Link>
+            </Link> */}
             <Cart>
               <CartIcon />
               {!hidden ? null : <CartDropDown />}
@@ -73,12 +73,12 @@ const Nav = ({
           </>
         ) : (
           <Fragment>
-            <SvgLink to="/signup/customer/">
+            {/* <SvgLink to="/signup/customer/">
               <Su />
             </SvgLink>
             <SvgLink to="/signin">
               <Si />
-            </SvgLink>
+            </SvgLink> */}
             <Cart>
               <CartIcon />
               {!hidden ? null : <CartDropDown />}
@@ -102,9 +102,6 @@ const Nav = ({
     </Navigation>
   );
 };
-// const clickOutsideConfig = {
-//   handleClickOutside: () => Nav.handleClickOutside
-// };
 
 Nav.propTypes = {
   signout: PropTypes.func.isRequired,

@@ -3,7 +3,16 @@ import PropTypes from 'prop-types';
 import { signout } from '../../Redux/User/user.actions';
 import { connect } from 'react-redux';
 
-import { NavItem, Sos, NavLink, Dash, Food, Welcome } from './NavMobile.styles';
+import {
+  NavItem,
+  Sos,
+  Si,
+  Su,
+  NavLink,
+  Dash,
+  Food,
+  Welcome,
+} from './NavMobile.styles';
 
 const NavMobile = ({ user: { isAuthenticated, loading, user }, signout }) => {
   const userLinks = (
@@ -43,6 +52,12 @@ const NavMobile = ({ user: { isAuthenticated, loading, user }, signout }) => {
       <NavItem>
         <NavLink to="/menu">
           <Food /> Menu
+        </NavLink>
+        <NavLink to="/signin">
+          <Si /> Sign In
+        </NavLink>
+        <NavLink to="/signup/customer">
+          <Su /> Sign Up
         </NavLink>
       </NavItem>
 

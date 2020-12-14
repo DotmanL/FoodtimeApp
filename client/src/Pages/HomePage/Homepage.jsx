@@ -3,9 +3,11 @@ import React, { Fragment } from 'react';
 import {
   Container,
   Header,
+  SearchContainer,
+  Main,
+  TitleContainer,
   Title,
   SubTitle,
-  SubHeader,
   Content,
   Cheader,
   Ctext,
@@ -19,9 +21,11 @@ import {
   Fooddrop,
   Basket,
   Menu,
+  Rest,
   ViewMenu,
   MenuT,
   MenuButton,
+  Dash,
 } from './Homepage.styles';
 
 import Search from '../../components/Search/Search';
@@ -33,22 +37,59 @@ const Homepage = () => {
     <Fragment>
       <Container>
         <Header>
-          <Title> Order your meals from the Best Restaurants</Title>
-          <SubTitle> Everywhere in Lagos</SubTitle>
-          <Search />
-          <a href="/menu">
-            <MenuButton> Browse Menu </MenuButton>
-          </a>
-        </Header>
+          <SearchContainer>
+            <Search />
+          </SearchContainer>
+          <Main>
+            <TitleContainer>
+              <Title> Order your meals from the Best Restaurants</Title>
+              <SubTitle> Everywhere in Lagos</SubTitle>
+            </TitleContainer>
 
-        <SubHeader>
-          <SubContent>
-            <CountUp start={0} end={30} />{' '}
-            <p style={{ marginLeft: '5px' }}>Restaurants</p>
-            <CountUp style={{ marginLeft: '50px' }} start={0} end={30} />{' '}
-            <p style={{ marginLeft: '5px' }}> Registered Users</p>
-          </SubContent>
-        </SubHeader>
+            <SubContent>
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                }}
+              >
+                <Rest />
+                <div
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
+                >
+                  <CountUp start={0} end={30} />
+                  <p style={{ marginLeft: '5px' }}>Restaurants</p>
+                </div>
+              </div>
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                }}
+              >
+                <Dash />
+                <div
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
+                >
+                  <CountUp style={{ marginLeft: '50px' }} start={0} end={30} />{' '}
+                  <p style={{ marginLeft: '5px' }}> Registered Users</p>
+                </div>
+              </div>
+            </SubContent>
+          </Main>
+        </Header>
 
         <Content>
           <Cheader> What we offer ?</Cheader>
@@ -56,7 +97,7 @@ const Homepage = () => {
             At Foodtime, we make it easier for you to order various meals and
             drinks from various eateries all over Lagos, Nigeria. we enable
             catering outfits and eateries all over Lagos to put their meals and
-            drinks online.{' '}
+            drinks online.
           </Ctext>
 
           <Citems>

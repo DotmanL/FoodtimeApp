@@ -2,10 +2,11 @@ import styled from 'styled-components';
 import { UserCircle } from '@styled-icons/boxicons-solid/UserCircle';
 import { LogInCircle } from '@styled-icons/boxicons-solid/LogInCircle';
 import { UserAdd } from '@styled-icons/heroicons-solid/UserAdd';
+import Ftlogo from './assets/ftlogo.png';
 import { Link } from 'react-router-dom';
 
 export const Navigation = styled.nav`
-  height: 90px;
+  height: 105px;
   width: 100vw;
   display: flex;
   position: fixed;
@@ -30,32 +31,42 @@ export const Toggle = styled.div`
   display: none;
   cursor: pointer;
   color: white;
-  padding: 10vw 10vw;
   @media (max-width: 800px) {
     display: flex;
-    padding: 0 0vw;
+    padding: 0 3vw;
     height: 5%;
     margin-top: 25px;
     z-index: 50;
   }
 `;
-export const Logo = styled.div`
-  color: #eb392e;
-  height: auto;
-  width: auto;
-  font-weight: 700;
-  cursor: pointer;
-  font-family: 'Raleway', sans-serif;
-  margin-top: 10px;
-  align-self: center;
+export const LogoContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3px;
   @media (max-width: 800px) {
     margin-top: 1px;
-    margin-right: 0px;
+    margin-bottom: 5px;
   }
 `;
+
+export const Logo = styled.div`
+  background-image: url(${Ftlogo});
+  width: 102px;
+  height: 102px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  @media (max-width: 800px) {
+    width: 50px;
+    height: 50px;
+  }
+`;
+
 export const LogoText = styled(Link)`
   font-size: 40px;
-  align-self: center;
+  margin-top: 10px;
+  font-weight: bolder;
   color: #eb392e;
   :hover {
     color: #eb392e;
@@ -67,23 +78,17 @@ export const LogoText = styled(Link)`
 
 export const Navbox = styled.div`
   display: flex;
-  height: 100%;
-  justify-content: space-evenly;
-  color: white;
-  font-size: 20px;
-  align-items: center;
   @media (max-width: 800px) {
-    flex-direction: column;
-    position: fixed;
-    width: 60%;
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed;
+    width: 100%;
+    height: 100%;
     padding-top: 20px;
     background-color: white;
     border-top: 1.5px solid #eb392e;
-    color: blue;
-    justify-content: flex-start;
-    align-items: flex-start;
-    transition: all 0.3s ease-in;
+    transition: all 0.1s ease-in;
     top: 0px;
     left: ${(props) => (props.open ? '-100%' : '0')};
   }
@@ -91,16 +96,16 @@ export const Navbox = styled.div`
 
 export const Hamburger = styled.div`
   background-color: #f1faee;
-  width: 24px;
-  height: 2px;
-  transition: all 0.3s linear;
+  width: 30px;
+  height: 3px;
+  transition: all 0.2s linear;
   align-self: center;
   position: relative;
   transform: ${(props) => (props.open ? 'rotate(-45deg)' : 'inherit')};
   ::before,
   ::after {
-    width: 24px;
-    height: 2px;
+    width: 30px;
+    height: 3px;
     background-color: #eb392e;
     content: '';
     position: absolute;

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import header from './assets/header.jpg';
 import header2 from './assets/header2.jpg';
+import { UserCircle } from '@styled-icons/boxicons-solid/UserCircle';
 import { ReactComponent as pickup } from './assets/delivery-man.svg';
-import { ReactComponent as order } from './assets/order.svg';
 import { ReactComponent as fullb } from './assets/meal.svg';
 import { ReactComponent as menub } from './assets/store-24px.svg';
 
@@ -15,7 +15,7 @@ export const Container = styled.div`
 
 export const Header = styled.div`
   width: 100vw;
-  height: 75vh;
+  height: 100vh;
   color: white;
   position: relative;
   background-image: url(${header});
@@ -24,69 +24,93 @@ export const Header = styled.div`
   box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
+  align-items: flex-start;
   font-family: 'PT Serif', serif;
-
+  margin-top: 0px;
   @media screen and (max-width: 800px) {
-    height: 60vh;
+    height: 100vh;
     margin-top: -50px;
   }
 `;
+
+export const SearchContainer = styled.div`
+  margin-top: -50px;
+  @media screen and (max-width: 800px) {
+    margin-top: 70px;
+    align-self: center;
+  }
+`;
+
+export const Main = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px 30px;
+  @media screen and (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px;
+  }
+`;
+
+export const TitleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  align-items: flex-start;
+  @media screen and (max-width: 800px) {
+    margin-top: 50px;
+    align-items: center;
+  }
+`;
 export const Title = styled.h1`
-  font-size: 50px;
+  font-size: 60px;
   color: white;
-  font-weight: 100;
-  width: 90vw;
-  margin-top: 0px;
+  font-weight: 300;
+  width: 50vw;
+  text-align: justify;
+  margin-left: 30px;
   @media screen and (max-width: 800px) {
     font-size: 25px;
-    margin-top: 0px;
     width: 90vw;
-    margin-top: 50px;
+    text-align: center;
+    margin-left: 0px;
   }
 `;
 export const SubTitle = styled.p`
-  font-size: 20px;
+  font-size: 40px;
   color: white;
-  width: 80vw;
   margin-top: -30px;
-  font-weight: 100;
+  margin-left: 30px;
+  font-weight: 300;
   @media screen and (max-width: 800px) {
     font-size: 20px;
     margin-top: 0px;
+    margin-left: 0px;
   }
 `;
 
-export const SubHeader = styled.div`
-  width: 100vw;
-  height: 9vh;
-  background-color: #eb392e;
-  display: flex;
-  flex-direction: row;
-  padding: 10px 10px;
-  border-bottom: 2px solid white;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  @media screen and (max-width: 800px) {
-  }
-`;
 export const SubContent = styled.div`
-  width: 100vw;
-  height: 15vh;
-  color: white;
+  height: 45vh;
+  width: 40vw;
+  color: #eb392e;
+  background-color: white;
+  border: 2px solid #eb392e;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
   text-align: center;
+  font-size: 25px;
+  margin-top: 60px;
   @media screen and (max-width: 800px) {
-    width: 100vw;
     font-size: 15px;
-    padding: 5px 5px 5px 5px;
+    width: 100%;
+    margin-top: 40px;
+    height: auto;
   }
 `;
 
@@ -105,40 +129,36 @@ export const Content = styled.div`
 `;
 
 export const Cheader = styled.h1`
-  font-size: 20px;
+  font-size: 30px;
+  font-weight: bold;
 
   @media screen and (max-width: 800px) {
-    width: 50vw;
+    font-size: 25px;
+    width: 70vw;
   }
 `;
 export const Ctext = styled.p`
-  font-size: 20px;
-  width: 70vw;
+  font-size: 30px;
+  text-align: justify;
   margin-top: -9px;
   padding-bottom: 30px;
   padding-top: 10px;
-
+  width: 70vw;
   @media screen and (max-width: 800px) {
-    font-size: 15px;
+    font-size: 20px;
     width: 80vw;
   }
 `;
 
 export const Citems = styled.div`
-  width: 100vw;
   height: auto;
-  padding: 40px 20px 40px 20px;
   display: flex;
   color: white;
-  background-color: #eb392e;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 
   @media screen and (max-width: 800px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 `;
 
@@ -157,8 +177,9 @@ export const Oitems = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin-left: -3vw;
-  width: 100%;
+  align-items: flex-start;
+  width: 100vw;
+  padding: 50px 50px;
 
   @media screen and (max-width: 800px) {
     display: flex;
@@ -169,10 +190,27 @@ export const Oitems = styled.div`
 export const Oheader = styled.h2`
   font-size: 20px;
   margin-top: -15px;
+  color: #eb392e;
 
   @media screen and (max-width: 800px) {
     font-size: 15px;
   }
+`;
+
+export const Ccontainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+`;
+
+export const Clabels = styled.h3`
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  color: #eb392e;
+  margin-top: 20px;
 `;
 
 export const ViewMenu = styled.div`
@@ -206,39 +244,36 @@ export const MenuT = styled.h4`
   }
 `;
 
-export const Clabels = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
-export const Ccontainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-  justify-content: space-between;
-
-  text-align: center;
-  align-items: center;
-`;
-
-export const Delivery = styled(order)`
-  width: 90px;
-  height: 70px;
-`;
-
 export const Fooddrop = styled(pickup)`
-  width: 90px;
-  height: 70px;
+  width: 190px;
+  height: 170px;
 `;
 
 export const Basket = styled(fullb)`
-  width: 90px;
-  height: 70px;
+  width: 190px;
+  height: 170px;
 `;
 
 export const Menu = styled(menub)`
-  width: 90px;
-  height: 70px;
+  width: 190px;
+  height: 170px;
+`;
+
+export const Rest = styled(Menu)`
+  @media screen and (max-width: 800px) {
+    width: 80px;
+    height: 90px;
+    align-self: center;
+  }
+`;
+
+export const Dash = styled(UserCircle)`
+  width: 190px;
+  height: 170px;
+  @media screen and (max-width: 800px) {
+    width: 80px;
+    height: 90px;
+  }
 `;
 
 export const MenuButton = styled.button`

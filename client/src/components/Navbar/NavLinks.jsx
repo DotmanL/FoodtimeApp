@@ -38,7 +38,7 @@ const NavLinks = ({
           <NavItem to="/" onClick={signout}>
             SIGN OUT <Sos to="/" title="Sign Out" onClick={signout} />
           </NavItem>
-          <div style={{ marginLeft: '50px' }}>
+          <div style={{ marginLeft: '50px', marginTop: '12px' }}>
             <CartIcon />
           </div>
         </NavItems>
@@ -73,7 +73,7 @@ const NavLinks = ({
             )}
           </div>
           <NavItem to="/signin">SignIn</NavItem>
-          <div style={{ marginLeft: '60px' }}>
+          <div style={{ marginLeft: '60px', marginTop: '12px' }}>
             <CartIcon />
           </div>
         </NavItems>
