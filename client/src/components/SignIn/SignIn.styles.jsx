@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import bg from '../SignUp/dh.jpeg';
+import bg from './assets/dh.jpeg';
 
 export const SignInContainer = styled.div`
   display: flex;
@@ -15,7 +15,7 @@ export const SignInContainer = styled.div`
   justify-content: center;
   @media screen and (max-width: 800px) {
     margin-top: -50px;
-		background-image: none;
+    background-image: none;
   }
 `;
 

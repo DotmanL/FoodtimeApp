@@ -9,7 +9,7 @@ export const NavItem = styled(Link)`
   color: #eb392e;
   white-space: nowrap;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 18px;
   margin: 10px 30px;
   padding-top: 1vh;
   transition: all 200ms ease-in;
@@ -23,7 +23,7 @@ export const NavItem = styled(Link)`
     width: 0%;
     content: '.';
     color: transparent;
-    background: #eb392e;
+    background: white;
     height: 1px;
     transition: all 0.4s ease-in;
   }
@@ -151,7 +151,7 @@ export const SignUpItem = styled.h4`
   color: #eb392e;
   white-space: nowrap;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 18px;
   margin: 10px 10px;
   padding-top: 1vh;
   transition: all 200ms ease-in;
@@ -165,7 +165,7 @@ export const SignUpItem = styled.h4`
     width: 0%;
     content: '.';
     color: transparent;
-    background: #eb392e;
+    background: white;
     height: 1px;
     transition: all 0.4s ease-in;
   }

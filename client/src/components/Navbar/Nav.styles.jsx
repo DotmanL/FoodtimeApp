@@ -6,7 +6,7 @@ import Ftlogo from './assets/ftlogo.png';
 import { Link } from 'react-router-dom';
 
 export const Navigation = styled.nav`
-  height: 105px;
+  height: 100px;
   width: 100vw;
   display: flex;
   position: fixed;
@@ -53,18 +53,18 @@ export const LogoContainer = styled.div`
 
 export const Logo = styled.div`
   background-image: url(${Ftlogo});
-  width: 102px;
-  height: 102px;
+  width: 82px;
+  height: 82px;
   background-size: cover;
   background-repeat: no-repeat;
   @media (max-width: 800px) {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
   }
 `;
 
 export const LogoText = styled(Link)`
-  font-size: 40px;
+  font-size: 30px;
   margin-top: 10px;
   font-weight: bolder;
   color: #eb392e;

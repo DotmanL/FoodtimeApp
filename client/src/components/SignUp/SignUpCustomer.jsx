@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import FormInput from '../form-input/form-input';
 import CustomButton from '../custom-button/custom-button';
 import ButtonSpin from '../ButtonSpin/ButtonSpin';
+import bckg from './assets/online_s.svg';
 
 import {
   FormContainer,
@@ -14,7 +15,10 @@ import {
   Title,
   AccText,
   Button,
-  HeaderTitle,
+  ButtonSwitch,
+  BgDiv,
+  Bg,
+  FormDiv,
 } from './SignUpRestaurant.styles';
 
 const SignUpCustomer = ({ signup, user: { loading } }) => {
@@ -67,84 +71,90 @@ const SignUpCustomer = ({ signup, user: { loading } }) => {
     <FormContainer>
       <Header>
         <Title>SIGN UP AS A CUSTOMER</Title>
-        <HeaderTitle href="/signup/restaurant">
-          <Button>Sign Up As a Restaurant </Button>
-        </HeaderTitle>
       </Header>
-      <form onSubmit={handleSubmit}>
-        <Container>
-          <FormInput
-            type="text"
-            name="lastName"
-            value={lastName}
-            onChange={handleChange}
-            label="Last Name"
-            required
-          />
-          <FormInput
-            type="text"
-            name="firstName"
-            value={firstName}
-            onChange={handleChange}
-            label="First Name"
-            required
-          />
-          <FormInput
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-            label="Email"
-            required
-          />
-          <FormInput
-            type="tel"
-            name="phoneNumber"
-            value={phoneNumber}
-            onChange={handleChange}
-            label="Phone Number"
-            required
-          />
 
-          <FormInput
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-            label="Password"
-            minLength="6"
-            required
-          />
-          <FormInput
-            type="password"
-            name="confirmPassword"
-            value={confirmPassword}
-            onChange={handleChange}
-            label="Confirm Password"
-            minLength="6"
-            required
-          />
-          <FormInput
-            type="hidden"
-            name="role"
-            value="customer"
-            onChange={handleChange}
-            required
-          />
+      <Container>
+        <FormDiv>
+          <ButtonSwitch href="/signup/restaurant">
+            <Button>Sign Up As a Restaurant </Button>
+          </ButtonSwitch>
+          <form onSubmit={handleSubmit}>
+            <FormInput
+              type="text"
+              name="lastName"
+              value={lastName}
+              onChange={handleChange}
+              label="Last Name"
+              required
+            />
+            <FormInput
+              type="text"
+              name="firstName"
+              value={firstName}
+              onChange={handleChange}
+              label="First Name"
+              required
+            />
+            <FormInput
+              type="email"
+              name="email"
+              value={email}
+              onChange={handleChange}
+              label="Email"
+              required
+            />
+            <FormInput
+              type="tel"
+              name="phoneNumber"
+              value={phoneNumber}
+              onChange={handleChange}
+              label="Phone Number"
+              required
+            />
 
-          <CustomButton type="submit">
-            {!loading && <span>Sign Up</span>}
-            {loading && <ButtonSpin />}
-          </CustomButton>
+            <FormInput
+              type="password"
+              name="password"
+              value={password}
+              onChange={handleChange}
+              label="Password"
+              minLength="6"
+              required
+            />
+            <FormInput
+              type="password"
+              name="confirmPassword"
+              value={confirmPassword}
+              onChange={handleChange}
+              label="Confirm Password"
+              minLength="6"
+              required
+            />
+            <FormInput
+              type="hidden"
+              name="role"
+              value="customer"
+              onChange={handleChange}
+              required
+            />
 
-          <AccText>
-            Already have an account?{' '}
-            <a style={{ color: '#EB392E' }} href="/signin">
-              Sign In
-            </a>
-          </AccText>
-        </Container>
-      </form>
+            <CustomButton type="submit">
+              {!loading && <span>Sign Up</span>}
+              {loading && <ButtonSpin />}
+            </CustomButton>
+
+            <AccText>
+              Already have an account?{' '}
+              <a style={{ color: '#EB392E' }} href="/signin">
+                Sign In
+              </a>
+            </AccText>
+          </form>
+        </FormDiv>
+        <BgDiv>
+          <Bg src={bckg} />
+        </BgDiv>
+      </Container>
     </FormContainer>
   );
 };

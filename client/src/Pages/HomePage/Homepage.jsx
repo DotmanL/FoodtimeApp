@@ -21,16 +21,16 @@ import {
   Fooddrop,
   Basket,
   Menu,
-  Rest,
+  // Rest,
   ViewMenu,
   MenuT,
   MenuButton,
-  Dash,
+  // Dash,
 } from './Homepage.styles';
 
 import Search from '../../components/Search/Search';
 import CountUp from 'react-countup';
-import ScrollAnimation from 'react-animate-on-scroll';
+// import ScrollAnimation from 'react-animate-on-scroll';
 
 const Homepage = () => {
   return (
@@ -50,42 +50,25 @@ const Homepage = () => {
               <div
                 style={{
                   display: 'flex',
-                  flexDirection: 'column',
+                  flexDirection: 'row',
+                  justifyContent: 'center',
                   alignItems: 'center',
                 }}
               >
-                <Rest />
-                <div
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  }}
-                >
-                  <CountUp start={0} end={30} />
-                  <p style={{ marginLeft: '5px' }}>Restaurants</p>
-                </div>
+                <CountUp start={0} end={30} />
+                <p style={{ marginLeft: '5px' }}>Restaurants</p>
               </div>
+
               <div
                 style={{
                   display: 'flex',
-                  flexDirection: 'column',
+                  flexDirection: 'row',
+                  justifyContent: 'center',
                   alignItems: 'center',
                 }}
               >
-                <Dash />
-                <div
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  }}
-                >
-                  <CountUp style={{ marginLeft: '50px' }} start={0} end={30} />{' '}
-                  <p style={{ marginLeft: '5px' }}> Registered Users</p>
-                </div>
+                <CountUp style={{ marginLeft: '50px' }} start={0} end={30} />{' '}
+                <p style={{ marginLeft: '5px' }}> Registered Users</p>
               </div>
             </SubContent>
           </Main>
@@ -106,26 +89,26 @@ const Homepage = () => {
             </Ocontainer>
 
             <Oitems>
-              <ScrollAnimation animateIn="bounceInLeft" duration={2} delay={0}>
-                <Ccontainer>
-                  <Menu />
-                  <Clabels> Browse through our menu </Clabels>
-                </Ccontainer>
-              </ScrollAnimation>
+              {/* <ScrollAnimation animateIn="bounceInLeft" duration={2} delay={0}> */}
+              <Ccontainer>
+                <Menu />
+                <Clabels> Browse through our menu </Clabels>
+              </Ccontainer>
+              {/* </ScrollAnimation> */}
 
-              <ScrollAnimation animateIn="bounceInRight" duration={2} delay={0}>
-                <Ccontainer>
-                  <Basket />
-                  <Clabels> Fill your Tray </Clabels>
-                </Ccontainer>
-              </ScrollAnimation>
+              {/* <ScrollAnimation animateIn="bounceInRight" duration={2} delay={0}> */}
+              <Ccontainer>
+                <Basket />
+                <Clabels> Fill your Tray </Clabels>
+              </Ccontainer>
+              {/* </ScrollAnimation> */}
 
-              <ScrollAnimation animateIn="bounceInLeft" duration={2} delay={0}>
-                <Ccontainer>
-                  <Fooddrop />
-                  <Clabels> Pickup or Delivery</Clabels>
-                </Ccontainer>
-              </ScrollAnimation>
+              {/* <ScrollAnimation animateIn="bounceInLeft" duration={2} delay={0}> */}
+              <Ccontainer>
+                <Fooddrop />
+                <Clabels> Pickup or Delivery</Clabels>
+              </Ccontainer>
+              {/* </ScrollAnimation> */}
             </Oitems>
           </Citems>
         </Content>

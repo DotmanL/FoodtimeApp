@@ -1,10 +1,13 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import header from './assets/header.jpg';
 import header2 from './assets/header2.jpg';
 import { UserCircle } from '@styled-icons/boxicons-solid/UserCircle';
 import { ReactComponent as pickup } from './assets/delivery-man.svg';
 import { ReactComponent as fullb } from './assets/meal.svg';
 import { ReactComponent as menub } from './assets/store-24px.svg';
+import { slideInRight } from 'react-animations';
+
+const wobAnimation = keyframes`${slideInRight}`;
 
 export const Container = styled.div`
   position: relative;
@@ -21,7 +24,7 @@ export const Header = styled.div`
   background-image: url(${header});
   background-size: cover;
   background-repeat: no-repeat;
-  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,7 +40,7 @@ export const Header = styled.div`
 export const SearchContainer = styled.div`
   margin-top: -50px;
   @media screen and (max-width: 800px) {
-    margin-top: 70px;
+    margin-top: -40px;
     align-self: center;
   }
 `;
@@ -93,24 +96,24 @@ export const SubTitle = styled.p`
 `;
 
 export const SubContent = styled.div`
-  height: 45vh;
-  width: 40vw;
-  color: #eb392e;
-  background-color: white;
+  height: 80px;
+  width: auto;
+  padding: 10px 10px;
+  color: white;
+  background-color: #eb392e;
   border: 2px solid #eb392e;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
   text-align: center;
   font-size: 25px;
-  margin-top: 60px;
+  margin-top: 200px;
   @media screen and (max-width: 800px) {
     font-size: 15px;
     width: 100%;
     margin-top: 40px;
-    height: auto;
+    height: 50px;
   }
 `;
 
@@ -131,6 +134,7 @@ export const Content = styled.div`
 export const Cheader = styled.h1`
   font-size: 30px;
   font-weight: bold;
+  color: #eb392e;
 
   @media screen and (max-width: 800px) {
     font-size: 25px;
@@ -144,6 +148,7 @@ export const Ctext = styled.p`
   padding-bottom: 30px;
   padding-top: 10px;
   width: 70vw;
+  color: #eb392e;
   @media screen and (max-width: 800px) {
     font-size: 20px;
     width: 80vw;
@@ -153,7 +158,6 @@ export const Ctext = styled.p`
 export const Citems = styled.div`
   height: auto;
   display: flex;
-  color: white;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
@@ -169,7 +173,6 @@ export const Ocontainer = styled.div`
   justify-content: center;
 
   @media screen and (max-width: 800px) {
-    width: 50vw;
   }
 `;
 
@@ -177,32 +180,33 @@ export const Oitems = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  align-items: flex-start;
+  /* align-items: flex-start; */
   width: 100vw;
-  padding: 50px 50px;
 
   @media screen and (max-width: 800px) {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 `;
 
 export const Oheader = styled.h2`
-  font-size: 20px;
+  font-size: 30px;
   margin-top: -15px;
   color: #eb392e;
 
   @media screen and (max-width: 800px) {
-    font-size: 15px;
+    font-size: 25px;
   }
 `;
 
 export const Ccontainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  align-self: center;
+  @media screen and (max-width: 800px) {
+  }
 `;
 
 export const Clabels = styled.h3`
@@ -211,6 +215,10 @@ export const Clabels = styled.h3`
   font-size: 20px;
   color: #eb392e;
   margin-top: 20px;
+  @media screen and (max-width: 800px) {
+    font-size: 18px;
+    margin-top: 10px;
+  }
 `;
 
 export const ViewMenu = styled.div`
@@ -247,16 +255,19 @@ export const MenuT = styled.h4`
 export const Fooddrop = styled(pickup)`
   width: 190px;
   height: 170px;
+  animation: 1s ${wobAnimation};
 `;
 
 export const Basket = styled(fullb)`
   width: 190px;
   height: 170px;
+  animation: 1s ${wobAnimation};
 `;
 
 export const Menu = styled(menub)`
   width: 190px;
   height: 170px;
+  animation: 1s ${wobAnimation};
 `;
 
 export const Rest = styled(Menu)`
@@ -278,16 +289,17 @@ export const Dash = styled(UserCircle)`
 
 export const MenuButton = styled.button`
   width: auto;
-  height: 45px;
+  height: auto;
   border: none;
   outline: none;
-  padding: 10px 10px;
+  padding: 20px 30px;
   color: #fff;
   background-color: #eb392e;
   cursor: pointer;
   position: relative;
   z-index: 0;
   border-radius: 10px;
+  font-size: 20px;
 
   &:before {
     content: '';
@@ -335,7 +347,7 @@ export const MenuButton = styled.button`
     position: absolute;
     width: 100%;
     height: 100%;
-    background: black;
+    background: #eb392e;
     left: 0;
     top: 0;
     border: 1px solid white;
@@ -352,5 +364,9 @@ export const MenuButton = styled.button`
     100% {
       background-position: 0 0;
     }
+  }
+  @media screen and (max-width: 800px) {
+    font-size: 15px;
+    padding: 15px 25px;
   }
 `;
