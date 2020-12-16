@@ -23,6 +23,7 @@ export const Container = styled.div`
   justify-content: center;
   height: auto;
   width: 100vw;
+  min-height: 100vh;
   @media screen and (max-width: 800px) {
     display: flex;
     flex-direction: column;
@@ -65,7 +66,7 @@ export const FormDiv = styled.div`
 
 export const Header = styled.div`
   width: 100vw;
-  height: 100px;
+  height: auto;
   color: white;
   position: relative;
   background-image: url(${header});
@@ -90,7 +91,7 @@ export const Title = styled.h1`
   color: white;
   font-weight: 100;
   width: 80vw;
-  margin-top: 50px;
+  margin-top: 60px;
   @media screen and (max-width: 800px) {
     font-size: 16px;
     width: 90vw;

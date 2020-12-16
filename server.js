@@ -1,6 +1,7 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const app = express();
+// const enforce = require('express-sslify');
 const path = require('path');
 
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
@@ -8,7 +9,7 @@ if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 connectDB();
 
 app.use(express.json());
-
+// app.use(enforce.HTTPS({ trustProtoHeader: true }));
 app.use(express.urlencoded({ extended: true }));
 
 // app.get('/', (req, res) =>{
