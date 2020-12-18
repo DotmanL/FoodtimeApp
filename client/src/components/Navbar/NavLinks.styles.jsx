@@ -10,7 +10,7 @@ export const NavItem = styled(Link)`
   white-space: nowrap;
   font-weight: 700;
   font-size: 18px;
-  margin: 10px 30px;
+  margin: 10px 20px;
   padding-top: 1vh;
   transition: all 200ms ease-in;
   cursor: pointer;
@@ -181,10 +181,11 @@ export const SignUpItem = styled.h4`
 `;
 
 export const Welcome = styled.h3`
-  font-size: 15px;
+  font-weight: 700;
+  font-size: 18px;
   display: flex;
-  color: white;
-  margin: 22px 7px;
+  color: #eb392e;
+  margin: 18px 0px;
 `;
 
 export const NavLink = styled.div`

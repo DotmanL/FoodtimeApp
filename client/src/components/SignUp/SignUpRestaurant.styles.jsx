@@ -24,6 +24,7 @@ export const Container = styled.div`
   height: auto;
   width: 100vw;
   min-height: 100vh;
+  position: relative;
   @media screen and (max-width: 800px) {
     display: flex;
     flex-direction: column;
@@ -35,6 +36,7 @@ export const BgDiv = styled.div`
   flex-direction: row;
   height: auto;
   width: 45vw;
+  position: relative;
   background-color: #eb392e;
   @media screen and (max-width: 800px) {
     display: none;
@@ -56,6 +58,7 @@ export const FormDiv = styled.div`
   width: 55vw;
   background-color: white;
   padding-top: 35px;
+  position: relative;
   @media screen and (max-width: 800px) {
     width: 100vw;
     height: 100vh;
