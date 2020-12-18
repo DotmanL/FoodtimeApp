@@ -53,6 +53,7 @@ export const getProducts = () => async (dispatch) => {
       payload: res.data,
     });
   } catch (err) {
+    console.log(err, 'errror rsds');
     dispatch({
       type: PRODUCTS_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status },

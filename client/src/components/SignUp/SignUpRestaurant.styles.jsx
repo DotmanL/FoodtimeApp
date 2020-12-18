@@ -7,7 +7,7 @@ export const FormContainer = styled.div`
   flex-direction: column;
   width: 100vw;
   background-color: #e5e5e5;
-  min-height: 100vh;
+  min-height: 100%;
   position: relative;
 
   @media screen and (max-width: 800px) {
@@ -23,7 +23,7 @@ export const Container = styled.div`
   justify-content: center;
   height: auto;
   width: 100vw;
-  min-height: 100vh;
+  min-height: 100%;
   position: relative;
   @media screen and (max-width: 800px) {
     display: flex;
@@ -36,7 +36,6 @@ export const BgDiv = styled.div`
   flex-direction: row;
   height: auto;
   width: 45vw;
-  position: relative;
   background-color: #eb392e;
   @media screen and (max-width: 800px) {
     display: none;
@@ -58,10 +57,9 @@ export const FormDiv = styled.div`
   width: 55vw;
   background-color: white;
   padding-top: 35px;
-  position: relative;
   @media screen and (max-width: 800px) {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     margin-top: 0px;
     padding-top: 60px;
   }

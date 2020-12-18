@@ -1,28 +1,66 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import bg from './assets/dh.jpeg';
 
 export const SignInContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100vw;
-  background-image: url(${bg});
+  background-color: gray;
   box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.2);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
-  align-items: center;
-  justify-content: center;
   @media screen and (max-width: 800px) {
     margin-top: -50px;
     background-image: none;
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
+export const FormContainer = styled.div`
+  background-color: white;
+  /* border-radius: 6px;
+  box-shadow: 5px 5px #888888; */
+  display: flex;
+  height: 100vh;
+  width: 40vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media screen and (max-width: 800px) {
+    width: 100vw;
+    padding: 10px 10px 10px 10px;
+  }
+`;
+
+export const FormInputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const FormInput = styled.input`
+  background: none;
+  color: black;
+  font-size: 13px;
+  padding: 10px 10px 10px 10px;
+  height: 50px;
+  width: 60%;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  outline: none;
+  @media screen and (max-width: 800px) {
+    width: 85%;
   }
 `;
 
 export const SignInTitle = styled.h1`
   font-weight: bold;
   font-size: 30px;
-  margin-top: 2vh;
+  color: #eb392e;
   @media screen and (max-width: 800px) {
   }
 `;
@@ -37,6 +75,8 @@ export const Fcontainer = styled.div`
 
 export const SignInFooter = styled(Link)`
   width: 40vw;
+  font-size: 20px;
+  font-weight: 600;
   color: black;
   display: flex;
   flex-direction: column;
@@ -54,7 +94,8 @@ export const SignInFooter = styled(Link)`
 `;
 
 export const Password = styled(Link)`
-  font-size: 15px;
+  font-size: 20px;
+  font-weight: 600;
   color: black;
   cursor: pointer;
   :hover {
@@ -67,40 +108,21 @@ export const Password = styled(Link)`
   }
 `;
 
-export const FormInput = styled.input`
-  background: none;
-  color: black;
-  font-size: 13px;
-  padding: 5px 10px 10px 5px;
-  display: block;
-  height: auto;
-  width: 70%;
-  border: 1px solid black;
-  border-radius: 5px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 6.7vw;
-  align-items: center;
-
-  outline: none;
+export const ImageContainer = styled.div`
+  height: 100vh;
+  width: 60vw;
+  background-color: red;
   @media screen and (max-width: 800px) {
-    width: 85%;
+    display: none;
   }
 `;
 
-export const FormContainer = styled.div`
-  background-color: white;
-  border-radius: 6px;
-  width: auto;
-  box-shadow: 5px 5px #888888;
-  height: auto;
+export const Bckg = styled.img`
+  height: 100vh;
+`;
+
+export const ButtonContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  padding: 5px 5px 5px 5px;
-  @media screen and (max-width: 800px) {
-    width: 85vw;
-    padding: 10px 10px 10px 10px;
-  }
 `;
