@@ -24,7 +24,7 @@ export const FormContainer = styled.div`
   box-shadow: 5px 5px #888888; */
   display: flex;
   height: 100vh;
-  width: 40vw;
+  width: 100vw;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -119,6 +119,7 @@ export const ImageContainer = styled.div`
 
 export const Bckg = styled.img`
   height: 100vh;
+  width: 60vw;
 `;
 
 export const ButtonContainer = styled.div`

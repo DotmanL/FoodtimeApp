@@ -4,6 +4,7 @@ export const FormContainer = styled.div`
   width: 100vw;
   padding: 20px 20px;
   display: flex;
+  position: relative;
   margin-left: auto;
   margin-right: auto;
   flex-direction: row;
@@ -18,6 +19,7 @@ export const FormInput = styled.input`
   border: 1px solid #03071e;
   padding: 5px 5px 5px 5px;
   border-radius: 5px;
+  position: relative;
   text-align: center;
   font-size: 20px;
 

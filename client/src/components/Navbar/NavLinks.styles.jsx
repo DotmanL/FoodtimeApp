@@ -185,7 +185,7 @@ export const Welcome = styled.h3`
   font-size: 18px;
   display: flex;
   color: #eb392e;
-  margin: 18px 0px;
+  margin: 17px 0px;
 `;
 
 export const NavLink = styled.div`

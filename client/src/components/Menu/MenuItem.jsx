@@ -25,15 +25,9 @@ const MenuItem = ({ product, addProduct }) => {
             <ProductImage src={productImage[0]} />
           </Link>
         </PrContainer>
-        <ProductName>
-          <Link to={`/products/${_id}`}>{productName}</Link>
-        </ProductName>
+        <ProductName>{productName}</ProductName>
         <RestaurantName> From {restaurant}</RestaurantName>
-        <Price>
-          <Link style={{ color: '#eb392e' }} to={`/products/${_id}`}>
-            ₦ {price}
-          </Link>
-        </Price>
+        <Price>₦ {price}</Price>
         <Add onClick={() => addProduct(product)}>
           <Tray /> Add to Tray
         </Add>

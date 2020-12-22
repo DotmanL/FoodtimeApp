@@ -30,6 +30,7 @@ export const Title = styled.h2`
   color: white;
   font-weight: 500;
   width: 90vw;
+  margin-top: 80px;
   @media screen and (max-width: 800px) {
     font-size: 20px;
     width: 90vw;
@@ -75,7 +76,7 @@ export const Item = styled.div`
     border-left: 0px solid red;
     border-right: 0px solid red;
     justify-content: center;
-    border-bottom: 2px solid #eb392e;
+    /* border-bottom: 2px solid #eb392e; */
     margin-bottom: 0px;
   }
 `;
@@ -85,7 +86,6 @@ export const SliderDiv = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background: red;
   margin-top: 5px;
   @media screen and (max-width: 800px) {
     width: 100vw;
@@ -128,11 +128,11 @@ export const ProductName = styled.h2`
 `;
 
 export const ProductsName = styled.h2`
-  font-size: 20px;
-  background: #eb392e;
+  font-size: 18px;
+  background: black;
   border-radius: 5px;
   color: white;
-  padding: 5px 50px;
+  padding: 10px 15px;
   margin-top: 45px;
   text-align: center;
   @media screen and (max-width: 800px) {
@@ -153,16 +153,17 @@ export const ItemDescription = styled.div`
     height: auto;
     padding-bottom: 10px;
     justify-content: center;
-    border-bottom: 2px solid #eb392e;
+    /* border-bottom: 2px solid #eb392e; */
   }
 `;
 
 export const ProductDescription = styled.h2`
-  font-size: 25px;
+  font-size: 18px;
+  background-color: orange;
   align-self: center;
-  text-align: center;
-  margin: 40px 9px 0px 5px;
-  padding-top: 10px;
+  text-align: justify;
+  margin: 40px 20px 0px 20px;
+  padding: 20px 5px;
   @media screen and (max-width: 800px) {
     font-size: 20px;
     margin-top: 10px;
@@ -170,16 +171,17 @@ export const ProductDescription = styled.h2`
 `;
 
 export const ProductRestaurant = styled.h3`
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
-  background: #eb392e;
+  background: black;
   color: white;
   border-radius: 4px;
-  padding: 10px 10px;
+  padding: 8px 8px;
   align-self: center;
   margin: 10px 9px;
   @media screen and (max-width: 800px) {
-    font-size: 15px;
+    font-size: 14px;
+    padding: 5px 5px;
   }
 `;
 
@@ -189,7 +191,7 @@ export const ProductPrice = styled.h4`
   text-align: center;
   align-self: center;
   margin: 15px 15px;
-  color: #eb392e;
+  color: green;
   @media screen and (max-width: 800px) {
     font-size: 25px;
     margin: 10px 15px;
@@ -207,32 +209,30 @@ export const Tray = styled(fullb)`
 
 export const Button = styled.button`
   width: 60%;
-  height: 50px;
+  height: auto;
   color: white;
-  margin-top: 20px;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
   border-radius: 5px;
-  background: #eb392e;
+  pointer-events: auto;
+  display: flex;
+  font-size: 15px;
+  align-items: center;
+  justify-content: center;
+  background: black;
   border: none;
   cursor: pointer;
+  padding: 12px 5px;
   outline: none;
   margin-right: auto;
   margin-left: auto;
 
   :hover {
-    opacity: 0.8;
+    background: #eb392e;
   }
   @media screen and (max-width: 800px) {
-    margin-top: 20px;
-    padding: 8px 8px 8px 8px;
-    width: 50%;
-    align-self: center;
-    justify-content: center;
-    margin-left: 25%;
-    height: 40px;
-    font-size: 15px;
+    margin-top: 1px;
+    padding: 6px 6px;
+    width: 70%;
+    font-size: 12px;
   }
 `;
 

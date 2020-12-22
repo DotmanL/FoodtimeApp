@@ -1,8 +1,8 @@
 import styled, { keyframes } from 'styled-components';
 
-import { pulse } from 'react-animations';
+import { fadeIn } from 'react-animations';
 
-const wobAnimation = keyframes`${pulse}`;
+const wobAnimation = keyframes`${fadeIn}`;
 
 export const Card = styled.div`
   background: white;
@@ -20,8 +20,6 @@ export const Card = styled.div`
   cursor: pointer;
 
   @media screen and (max-width: 450px) {
-    /* margin-right: auto;
-    margin-left: auto; */
     margin: 5px 5px 5px 5px;
     box-shadow: 1px 1px 2px 2px #888888;
     width: auto;
@@ -30,8 +28,6 @@ export const Card = styled.div`
   }
 
   @media screen and (min-width: 450px) and (max-width: 800px) {
-    /* margin-right: auto;
-    margin-left: auto; */
     margin: 8.5px 8.5px 8.5px 8.5px;
     box-shadow: 1px 1px 2px 2px #888888;
     width: auto;
@@ -72,11 +68,11 @@ export const ProductImage = styled.img`
 
 export const ProductName = styled.h2`
   color: white;
-  font-size: 14px;
+  font-size: 15px;
   outline: 1px solid;
   background: #eb392e;
   width: 100%;
-  padding: 4px 5px;
+  padding: 8px 5px;
   text-align: center;
   margin-top: -5px;
 
@@ -90,20 +86,21 @@ export const RestaurantName = styled.h3`
   color: white;
   background: black;
   border-radius: 5px;
-  font-size: 10px;
+  font-size: 13px;
   margin-top: 5px;
-  margin-left: 14px;
+  /* margin-left: 14px; */
   text-align: center;
-  width: 50%;
-  padding: 5px 5px;
+  width: 90%;
+  align-self: center;
+  padding: 6px 6px;
   @media screen and (max-width: 800px) {
-    font-size: 8px;
-    width: 60%;
+    font-size: 10px;
+    width: 90%;
   }
 `;
 
 export const Price = styled.h4`
-  color: #eb392e;
+  color: green;
   margin-top: 0px;
   margin-left: 20px;
   font-size: 25px;
@@ -123,16 +120,16 @@ export const Add = styled.button`
   font-size: 15px;
   align-items: center;
   justify-content: center;
-  background: #eb392e;
+  background: black;
   border: none;
   cursor: pointer;
-  padding: 9px 5px;
+  padding: 12px 5px;
   outline: none;
   margin-right: auto;
   margin-left: auto;
 
   :hover {
-    opacity: 0.8;
+    background: #eb392e;
   }
   @media screen and (max-width: 800px) {
     margin-top: 1px;

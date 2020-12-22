@@ -46,7 +46,7 @@ export const Bg = styled.img`
   height: auto;
   width: 40vw;
   margin-top: -50px;
-  margin-left: 150px;
+  margin-left: 100px;
 `;
 
 export const FormDiv = styled.div`

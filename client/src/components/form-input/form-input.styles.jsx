@@ -4,14 +4,14 @@ const subColor = 'black';
 const mainColor = 'black';
 
 const shrinkLabelStyles = css`
-  top: -20px;
-  font-size: 14px;
+  top: -30px;
+  font-size: 16px;
   font-weight: 750;
   color: ${mainColor};
   @media screen and (max-width: 800px) {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 550;
-    top: -16px;
+    top: -23px;
   }
 `;
 
@@ -32,7 +32,7 @@ export const FormInputContainer = styled.input`
   height: 40px;
   border: 1px solid black;
   border-radius: 5px;
-  margin: 25px 0;
+  margin: 42px 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -44,7 +44,7 @@ export const FormInputContainer = styled.input`
   }
   @media screen and (max-width: 800px) {
     width: 75vw;
-    margin: 17px 0;
+    margin: 30px 0;
   }
 `;
 

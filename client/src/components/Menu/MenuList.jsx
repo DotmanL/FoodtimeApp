@@ -2,12 +2,14 @@ import React, { useEffect, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
-import 'react-awesome-slider/dist/styles.css';
+// import 'react-awesome-slider/dist/styles.css';
 import { connect } from 'react-redux';
 import {
   getProductsById,
   addProduct,
 } from '../../Redux/Products/products.actions';
+
+import AS from './as.css';
 
 import {
   Container,
@@ -92,6 +94,7 @@ const MenuList = ({
                         play={true}
                         cancelOnInteraction={false} // should stop playing on user interaction
                         interval={6000}
+                        cssModule={AS}
                       >
                         {product &&
                           product.productImage.map((images, i) => (
