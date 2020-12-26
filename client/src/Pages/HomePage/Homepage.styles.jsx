@@ -20,7 +20,7 @@ export const Header = styled.div`
   width: 100vw;
   height: 100vh;
   color: white;
-  position: relative;
+  /* position: relative; */
   background-image: url(${header});
   background-size: cover;
   background-repeat: no-repeat;
@@ -32,7 +32,7 @@ export const Header = styled.div`
   font-family: 'PT Serif', serif;
   margin-top: 0px;
   @media screen and (max-width: 800px) {
-    height: 100vh;
+    height: 700px;
     margin-top: -50px;
   }
 `;

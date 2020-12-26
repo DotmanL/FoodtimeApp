@@ -159,11 +159,13 @@ export const ItemDescription = styled.div`
 
 export const ProductDescription = styled.h2`
   font-size: 18px;
-  background-color: orange;
+  background-color: white;
+  border: 1.5px solid black;
+  border-radius: 8px;
   align-self: center;
   text-align: justify;
   margin: 40px 20px 0px 20px;
-  padding: 20px 5px;
+  padding: 8px 10px;
   @media screen and (max-width: 800px) {
     font-size: 20px;
     margin-top: 10px;
