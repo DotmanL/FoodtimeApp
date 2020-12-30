@@ -78,8 +78,6 @@ const AddProduct = ({
     data.set('quantity', productDetails.quantity);
     data.set('category', productDetails.category);
 
-    console.log(data, 'image data');
-
     createProduct(data);
     setProductDetails(initialState);
     setImage('');
@@ -177,6 +175,7 @@ const AddProduct = ({
 AddProduct.propTypes = {
   createProduct: PropTypes.func.isRequired,
   getCategories: PropTypes.func.isRequired,
+  product: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({

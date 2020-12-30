@@ -104,12 +104,6 @@ export const CategorySelect = styled.select`
   }
 `;
 
-export const ImagePreview = styled.img`
-  background-color: red;
-  width: 200px;
-  height: 200px;
-`;
-
 export const ImageUpload = styled.input`
   display: flex;
 `;
@@ -117,6 +111,16 @@ export const ImageUpload = styled.input`
 export const PostPrev = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  width: auto;
+  padding: 20px 50px;
+`;
+
+export const ImagePreview = styled.img`
+  flex-direction: row;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
 `;
 
 export const Gal = styled(Gallery)`

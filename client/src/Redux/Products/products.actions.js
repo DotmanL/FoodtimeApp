@@ -32,7 +32,7 @@ export const createProduct = (formData) => async (dispatch) => {
     };
 
     dispatch({
-      CREATE_PRODUCT_START,
+      type: CREATE_PRODUCT_START,
     });
 
     const res = await axios.post('/api/products', formData, config);
