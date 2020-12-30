@@ -30,6 +30,7 @@ import Admin from './components/Admin/Admin';
 import accessdenied from './components/error-boundary/accessdenied';
 import EditCategory from './components/Admin/EditCategory';
 import CheckoutPage from './Pages/CheckoutPage/CheckoutPage';
+import AddProduct from './components/AddProduct/AddProduct';
 
 const styles = {
   marginTop: '80px',
@@ -69,6 +70,7 @@ const App = () => {
             <Route exact path="/menu" component={MenuPage} />
             <Route exact path="/checkout" component={CheckoutPage} />
             <Route exact path="/products/:id" component={MenuList} />
+            <Route exact path="/add-product" component={AddProduct} />
             <AdminRoute exact path="/admin" component={Admin} />
             <AdminRoute
               exact

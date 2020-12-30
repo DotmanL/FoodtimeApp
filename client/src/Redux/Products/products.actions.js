@@ -10,6 +10,8 @@ import {
   TOGGLE_CART,
   REDUCE_PRODUCT,
   CLEAR_CART_PRODUCT,
+  CREATE_PRODUCT_START,
+  CREATE_PRODUCT,
 } from './products.types';
 
 //ADD product to cart
@@ -19,6 +21,40 @@ export const addProduct = (product) => async (dispatch) => {
     payload: product,
   });
   // toast.success('Product Added', { autoClose: 800 });
+};
+
+export const createProduct = (formData) => async (dispatch) => {
+  try {
+    const config = {
+      headers: {
+        'Content-Type': undefined,
+      },
+    };
+
+    dispatch({
+      CREATE_PRODUCT_START,
+    });
+
+    const res = await axios.post('/api/products', formData, config);
+    dispatch({
+      type: CREATE_PRODUCT,
+      payload: res.data,
+    });
+
+    toast.success('Product Created');
+  } catch (err) {
+    const errors = err.response.data.errors;
+
+    if (errors) {
+      errors.forEach((error) =>
+        toast.error('Failed to create product', error.msg)
+      );
+    }
+    dispatch({
+      type: PRODUCTS_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status },
+    });
+  }
 };
 
 //Reduce product from cart

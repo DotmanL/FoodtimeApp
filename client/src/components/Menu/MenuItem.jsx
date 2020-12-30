@@ -3,6 +3,7 @@ import React, { Fragment } from 'react';
 import {
   Card,
   ProductImage,
+  ProductNameContainer,
   ProductName,
   RestaurantName,
   Price,
@@ -25,7 +26,10 @@ const MenuItem = ({ product, addProduct }) => {
             <ProductImage src={productImage[0]} />
           </Link>
         </PrContainer>
-        <ProductName>{productName}</ProductName>
+        <ProductNameContainer>
+          <ProductName>{productName}</ProductName>
+        </ProductNameContainer>
+
         <RestaurantName> From {restaurant}</RestaurantName>
         <Price>₦ {price}</Price>
         <Add onClick={() => addProduct(product)}>

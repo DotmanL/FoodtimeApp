@@ -115,12 +115,12 @@ export const ProductImage = styled.img`
 `;
 
 export const ProductName = styled.h2`
-  font-size: 20px;
+  font-size: 18px;
   background: #eb392e;
-  border-radius: 5px;
+  border-radius: 20px;
   color: white;
-  padding: 5px 50px;
-  margin-top: 15px;
+  padding: 10px 20px;
+  margin-top: 25px;
   text-align: center;
   @media screen and (max-width: 800px) {
     font-size: 15px;
@@ -163,12 +163,18 @@ export const ProductDescription = styled.h2`
   border: 1.5px solid black;
   border-radius: 8px;
   align-self: center;
-  text-align: justify;
-  margin: 40px 20px 0px 20px;
+  text-align: center;
+  margin: 20px 20px 0px 20px;
   padding: 8px 10px;
+
+  &:hover {
+    background-color: #eb392e;
+    color: white;
+  }
   @media screen and (max-width: 800px) {
     font-size: 20px;
     margin-top: 10px;
+    padding: 5px 5px;
   }
 `;
 
@@ -180,10 +186,11 @@ export const ProductRestaurant = styled.h3`
   border-radius: 4px;
   padding: 8px 8px;
   align-self: center;
-  margin: 10px 9px;
+  margin: 50px 9px 0px 9px;
   @media screen and (max-width: 800px) {
     font-size: 14px;
     padding: 5px 5px;
+    margin: 20px 9px 0px 9px;
   }
 `;
 
@@ -210,7 +217,7 @@ export const Tray = styled(fullb)`
 `;
 
 export const Button = styled.button`
-  width: 60%;
+  width: auto;
   height: auto;
   color: white;
   border-radius: 5px;
@@ -222,7 +229,7 @@ export const Button = styled.button`
   background: black;
   border: none;
   cursor: pointer;
-  padding: 12px 5px;
+  padding: 12px 10px;
   outline: none;
   margin-right: auto;
   margin-left: auto;
@@ -232,9 +239,8 @@ export const Button = styled.button`
   }
   @media screen and (max-width: 800px) {
     margin-top: 1px;
-    padding: 6px 6px;
-    width: 70%;
-    font-size: 12px;
+    padding: 10px 10px;
+    font-size: 14px;
   }
 `;
 

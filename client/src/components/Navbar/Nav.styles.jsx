@@ -11,6 +11,7 @@ export const Navigation = styled.nav`
   display: flex;
   position: fixed;
   top: 0;
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.2);
   text-transform: uppercase;
   padding: 0 2vw;
   z-index: 999;
@@ -19,6 +20,7 @@ export const Navigation = styled.nav`
   justify-content: space-between;
   align-self: center;
   @media (max-width: 800px) {
+    box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.2);
     position: sticky;
     display: flex;
     margin-top: -4px;

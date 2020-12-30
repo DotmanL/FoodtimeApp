@@ -61,12 +61,12 @@ const MenuList = ({
           <Main>
             <ItemContainer>
               <ItemDescription>
-                <ProductDescription>
-                  {product && product.description}
-                </ProductDescription>
                 <ProductRestaurant>
                   Offered by {product && product.restaurant}
                 </ProductRestaurant>
+                <ProductDescription>
+                  {product && product.description}
+                </ProductDescription>
 
                 <ProductPrice> ₦{product && product.price}</ProductPrice>
                 <Button onClick={() => addProduct(product)}>

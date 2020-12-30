@@ -19,7 +19,7 @@ import {
   ButtonContainer,
   Fcontainer,
 } from './SignIn.styles';
-import bg from './assets/dh.jpeg';
+import bg from './assets/sign_in_bg.svg';
 
 const SignIn = ({ signin, isAuthenticated, user: { loading, user } }) => {
   const [userCredentials, setUserCredentials] = useState({
@@ -33,7 +33,7 @@ const SignIn = ({ signin, isAuthenticated, user: { loading, user } }) => {
     event.preventDefault();
     signin(email, password);
 
-    setUserCredentials({ email: '', password: '' });
+    // setUserCredentials({ email: '', password: '' });
   };
 
   const handleChange = (event) => {

@@ -34,9 +34,12 @@ export const Container = styled.div`
 export const BgDiv = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
   height: auto;
   width: 45vw;
-  background-color: #eb392e;
+  background-color: wheat;
+  border-right: 2px solid #eb392e;
   @media screen and (max-width: 800px) {
     display: none;
   }
@@ -45,8 +48,7 @@ export const BgDiv = styled.div`
 export const Bg = styled.img`
   height: auto;
   width: 40vw;
-  margin-top: -50px;
-  margin-left: 100px;
+  margin-top: 50px;
 `;
 
 export const FormDiv = styled.div`

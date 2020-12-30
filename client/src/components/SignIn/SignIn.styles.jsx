@@ -24,7 +24,7 @@ export const FormContainer = styled.div`
   box-shadow: 5px 5px #888888; */
   display: flex;
   height: 100vh;
-  width: 100vw;
+  width: 35vw;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -109,17 +109,22 @@ export const Password = styled(Link)`
 `;
 
 export const ImageContainer = styled.div`
-  height: 100vh;
-  width: 60vw;
-  background-color: red;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 65vw;
+  background-color: wheat;
+  border-left: 2px solid #eb392e;
   @media screen and (max-width: 800px) {
     display: none;
   }
 `;
 
 export const Bckg = styled.img`
-  height: 100vh;
-  width: 60vw;
+  height: auto;
+  width: 40vw;
 `;
 
 export const ButtonContainer = styled.div`

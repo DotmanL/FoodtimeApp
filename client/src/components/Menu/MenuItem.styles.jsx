@@ -10,12 +10,13 @@ export const Card = styled.div`
   color: black;
   pointer-events: none;
   flex-direction: column;
+  align-items: center;
   box-shadow: 5px 5px 5px 5px #888888;
   border-radius: 8px;
   width: auto;
   margin: 40px 40px 40px 40px;
   height: auto;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
   animation: 5s ${wobAnimation};
   cursor: pointer;
 
@@ -24,7 +25,7 @@ export const Card = styled.div`
     box-shadow: 1px 1px 2px 2px #888888;
     width: auto;
     height: auto;
-    padding-bottom: 20px;
+    padding-bottom: 13px;
   }
 
   @media screen and (min-width: 450px) and (max-width: 800px) {
@@ -66,19 +67,27 @@ export const ProductImage = styled.img`
   }
 `;
 
-export const ProductName = styled.h2`
-  color: white;
-  font-size: 15px;
-  outline: 1px solid;
+export const ProductNameContainer = styled.div`
   background: #eb392e;
   width: 100%;
-  padding: 8px 5px;
-  text-align: center;
+  color: white;
+  outline: 1px solid;
   margin-top: -5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  @media screen and (max-width: 800px) {
+    padding: 2px 3px;
+  }
+`;
+
+export const ProductName = styled.h2`
+  font-size: 15px;
 
   @media screen and (max-width: 800px) {
-    font-size: 10px;
-    width: 100%;
+    font-size: 9px;
+    width: 90%;
   }
 `;
 
@@ -102,11 +111,10 @@ export const RestaurantName = styled.h3`
 export const Price = styled.h4`
   color: green;
   margin-top: 0px;
-  margin-left: 20px;
-  font-size: 25px;
+  font-size: 28px;
   @media screen and (max-width: 800px) {
-    font-size: 15px;
-    margin-top: -5px;
+    font-size: 18px;
+    margin-top: 0px;
   }
 `;
 
@@ -125,6 +133,7 @@ export const Add = styled.button`
   cursor: pointer;
   padding: 12px 5px;
   outline: none;
+  margin-top: -5px;
   margin-right: auto;
   margin-left: auto;
 

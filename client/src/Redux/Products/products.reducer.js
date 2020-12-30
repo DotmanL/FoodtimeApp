@@ -6,6 +6,8 @@ import {
   TOGGLE_CART,
   REDUCE_PRODUCT,
   CLEAR_CART_PRODUCT,
+  CREATE_PRODUCT,
+  CREATE_PRODUCT_START,
 } from './products.types';
 import { addItemToCart, removeItemFromCart } from './product.utils';
 
@@ -16,6 +18,7 @@ const initialState = {
   cartItems: [],
   loading: true,
   adding: false,
+  creating: false,
   error: {},
 };
 
@@ -34,6 +37,22 @@ const productReducer = (state = initialState, action) => {
       return {
         ...state,
         hidden: !state.hidden,
+      };
+    }
+
+    case CREATE_PRODUCT_START: {
+      return {
+        ...state,
+        adding: true,
+      };
+    }
+
+    case CREATE_PRODUCT: {
+      return {
+        ...state,
+        product: payload,
+        loading: false,
+        adding: false,
       };
     }
 

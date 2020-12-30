@@ -20,8 +20,9 @@ exports.addProducts = async (req, res) => {
     //   console.log(images.url);
 
     req.body.productImage = [];
-    for (const file of req.files) {
-      let result = await cloudinary.uploader.upload(file.path);
+    for (const file of Object.keys(req.files)) {
+      var fileObj = req.files[file];
+      let result = await cloudinary.uploader.upload(fileObj.path);
       req.body.productImage.push(result.secure_url);
     }
     // console.log('req.file :', req.file);

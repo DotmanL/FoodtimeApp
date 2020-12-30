@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import pheader from './profileHeader.jpg';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   position: relative;
@@ -18,22 +19,25 @@ export const Container = styled.div`
 `;
 
 export const Top = styled.div`
-  position: relative;
   box-shadow: inset 0 0 0 2000px rgba(140, 0, 0, 0.5);
   background-image: url(${pheader});
   background-size: cover;
   background-repeat: no-repeat;
   width: 95%;
   border-radius: 7px;
-  margin-left: 10px;
-  margin-top: 20px;
+  margin-top: 30px;
   height: auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  padding: 10px 30px;
+  /* justify-content: center; */
   z-index: -5;
   @media screen and (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 85%;
     margin-top: 15px;
     margin-left: 0px;
   }
@@ -42,9 +46,47 @@ export const Top = styled.div`
 export const TopText = styled.h4`
   color: white;
   font-size: 45px;
+  margin-left: 25%;
+  display: flex;
   align-self: center;
+  justify-self: center;
   @media screen and (max-width: 800px) {
-    font-size: 35px;
+    font-size: 25px;
+    margin-left: 0;
+  }
+`;
+
+export const AddProduct = styled(Link)`
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #eb392e;
+  border-radius: 5px;
+  text-align: center;
+  outline: none;
+  margin-left: 25%;
+  border: 0px solid #03071e;
+  box-shadow: 5px 3px 4px 3px #888888;
+  cursor: pointer;
+  width: 190px;
+  height: 45px;
+  font-size: 16px;
+  font-weight: 700;
+
+  :hover {
+    background: #eb392e;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  @media screen and (max-width: 800px) {
+    width: auto;
+    height: auto;
+    padding: 13px 10px;
+    font-size: 14px;
+    margin-left: 0;
   }
 `;
 
@@ -65,13 +107,11 @@ export const ImageContainer = styled.img`
   box-shadow: 5px 5px 15px 3px #888888;
   width: 150px;
   height: 150px;
-  margin-top: -50px;
+  /* margin-top: -50px; */
   outline: none;
-  margin-left: 9vw;
-  align-self: flex-start;
-  display: inline-block;
+  /* margin-left: 9vw; */
+  display: flex;
   @media screen and (max-width: 800px) {
-    margin-top: -30px;
     margin-right: auto;
     margin-left: auto;
     width: 160px;
@@ -86,9 +126,7 @@ export const ImageDiv = styled.div`
   box-shadow: 5px 5px 15px 3px #888888;
   width: 150px;
   height: 150px;
-  margin-top: -50px;
   outline: none;
-  margin-left: 9vw;
   align-self: flex-start;
   align-items: center;
   display: inline-block;
@@ -113,15 +151,12 @@ export const ImgText = styled.h4`
 `;
 
 export const Content = styled.div`
-  position: relative;
   display: flex;
   width: 100vw;
   height: auto;
-  padding-bottom: 20px;
   flex-direction: row;
-  z-index: -5;
   justify-content: space-between;
-  margin-top: -100px;
+
   @media screen and (max-width: 800px) {
     display: flex;
     flex-direction: column;
@@ -136,7 +171,7 @@ export const MenuNav = styled.div`
   padding: 5px 5px 5px 5px;
   border-radius: 3px;
   width: 25vw;
-  margin-top: 110px;
+  margin-top: 15px;
   @media screen and (max-width: 800px) {
     width: 85vw;
     margin-right: auto;
@@ -187,7 +222,7 @@ export const MenuContent = styled.div`
   border-radius: 10px;
   color: black;
   width: 66vw;
-  margin-top: 95px;
+  margin-top: 15px;
   margin-right: 40px;
 
   @media screen and (max-width: 800px) {

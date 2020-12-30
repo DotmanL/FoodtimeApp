@@ -134,7 +134,7 @@ export const signin = (email, password) => async (dispatch) => {
     dispatch({
       type: SIGN_IN_FAIL,
     });
-    toast.error('Sign in Failure', { autoClose: 3000 });
+    // toast.error('Sign in Failure', { autoClose: 3000 });
   }
 };
 

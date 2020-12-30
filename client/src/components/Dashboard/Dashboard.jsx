@@ -19,6 +19,7 @@ import {
   MenuLinks,
   MenuContent,
   Links,
+  AddProduct,
 } from './Dashboard.styles';
 
 import Account from './Account';
@@ -57,29 +58,32 @@ const Dashboard = ({
       ) : (
         <Container>
           <Top>
+            <div>
+              {profile !== null && profile && profile.profileImage !== '' && (
+                <ImageContainer src={profile && profile.profileImage} alt="" />
+              )}
+              {profile === null && (
+                <ImageDiv>
+                  <ImgText>
+                    {user && user.lastName.charAt(0)}{' '}
+                    {user && user.firstName.charAt(0)}
+                  </ImgText>
+                </ImageDiv>
+              )}
+              {profile !== null && profile && profile.profileImage === '' && (
+                <ImageDiv>
+                  <ImgText>
+                    {user && user.lastName.charAt(0)}{' '}
+                    {user && user.firstName.charAt(0)}
+                  </ImgText>
+                </ImageDiv>
+              )}
+            </div>
             <TopText>Hello, {user && user.firstName} </TopText>
+            {user && user.role === 'vendor' ? (
+              <AddProduct to="/add-product">Add New Product</AddProduct>
+            ) : null}
           </Top>
-          {profile !== null && profile && profile.profileImage !== '' && (
-            <ImageContainer src={profile && profile.profileImage} alt="" />
-          )}
-
-          {profile === null && (
-            <ImageDiv>
-              <ImgText>
-                {user && user.lastName.charAt(0)}{' '}
-                {user && user.firstName.charAt(0)}
-              </ImgText>
-            </ImageDiv>
-          )}
-
-          {profile !== null && profile && profile.profileImage === '' && (
-            <ImageDiv>
-              <ImgText>
-                {user && user.lastName.charAt(0)}{' '}
-                {user && user.firstName.charAt(0)}
-              </ImgText>
-            </ImageDiv>
-          )}
 
           <Content>
             <MenuNav>
@@ -88,6 +92,9 @@ const Dashboard = ({
                 <Links onClick={() => setMenus('account')}>
                   Account Details
                 </Links>
+              </MenuLinks>
+              <MenuLinks>
+                <Links>Products</Links>
               </MenuLinks>
               <MenuLinks>
                 <Links onClick={() => setMenus('order')}>Orders History</Links>

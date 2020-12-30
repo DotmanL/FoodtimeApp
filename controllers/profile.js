@@ -40,7 +40,7 @@ exports.addImage = async (req, res) => {
 
       const profileFields = {
         user: req.user.id,
-        profileImage: images.url,
+        profileImage: images.secure_url,
       };
 
       let profile = await Profile.findOneAndUpdate(
