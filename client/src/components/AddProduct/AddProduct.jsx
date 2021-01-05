@@ -12,11 +12,14 @@ import {
   FormContainer,
   Main,
   ImageUploadContainer,
+  ImagePreviewContainer,
   ImagePreview,
+  ImagePreviewButtons,
   CategorySelect,
   ImageUpload,
   PostPrev,
   Gal,
+  Remove,
   ButtonContainer,
 } from './AddProduct.styles';
 import ButtonSpin from '../ButtonSpin/ButtonSpin';
@@ -33,16 +36,14 @@ const AddProduct = ({
   createProduct,
   getCategories,
   category: { categories },
-  product: { adding },
+  product: { creating },
 }) => {
   useEffect(() => {
     getCategories();
   }, [getCategories]);
 
-  const [image, setImage] = useState({ preview: '', raw: '' });
+  const [image, setImage] = useState({ preview: '', images: [], raw: '' });
   const [productDetails, setProductDetails] = useState(initialState);
-
-  // data = productImage;
 
   const {
     productName,
@@ -59,8 +60,19 @@ const AddProduct = ({
 
   const handleImage = (event) => {
     if (event.target.files.length) {
+      const imageArray = Array.from(event.target.files);
+
       setImage({
-        preview: URL.createObjectURL(event.target.files[0]),
+        images: imageArray,
+      });
+
+      const mapped = imageArray.map((file) => ({
+        ...file,
+        preview: URL.createObjectURL(file),
+      }));
+
+      setImage({
+        preview: mapped,
         raw: event.target.files,
       });
     }
@@ -74,7 +86,7 @@ const AddProduct = ({
     }
     data.set('productName', productDetails.productName);
     data.set('description', productDetails.description);
-    data.set('price', productDetails.quantity);
+    data.set('price', productDetails.price);
     data.set('quantity', productDetails.quantity);
     data.set('category', productDetails.category);
 
@@ -84,6 +96,17 @@ const AddProduct = ({
 
     // return <Redirect to="/menu" />;
   };
+
+  const onRemove = (event) => {
+    const currentImagePreview = image.preview.filter(
+      (previewUrl, i) => i !== event
+    );
+    setImage({
+      preview: currentImagePreview,
+    });
+  };
+
+  const onUpdate = (event, i) => {};
 
   return (
     <Container>
@@ -140,15 +163,25 @@ const AddProduct = ({
           </FormContainer>
           <ImageUploadContainer>
             <PostPrev>
-              <label htmlFor="upload">
+              <ImagePreviewContainer>
                 {image.preview ? (
-                  <ImagePreview alt="product image" src={image.preview} />
+                  image.preview.map((file, i) => (
+                    <div key={i}>
+                      <ImagePreview src={file.preview} />
+                      <ImagePreviewButtons>
+                        <h3 onClick={() => onUpdate(i)}>update </h3>
+                        <Remove title="Remove" onClick={() => onRemove(i)} />
+                      </ImagePreviewButtons>
+                    </div>
+                  ))
                 ) : (
                   <>
-                    <Gal />{' '}
+                    <label htmlFor="upload">
+                      <Gal />
+                    </label>
                   </>
                 )}
-              </label>
+              </ImagePreviewContainer>
             </PostPrev>
             <ImageUpload
               type="file"
@@ -163,8 +196,8 @@ const AddProduct = ({
         </Main>
         <ButtonContainer>
           <CustomButton type="submit">
-            {!adding && <span>Create Product</span>}
-            {adding && <ButtonSpin />}
+            {!creating && <span>Create Product</span>}
+            {creating && <ButtonSpin />}
           </CustomButton>
         </ButtonContainer>
       </Form>

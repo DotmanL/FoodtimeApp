@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { Gallery } from '@styled-icons/remix-fill/Gallery';
+import { Gallery } from '@styled-icons/remix-line/Gallery';
+import { MinusCircle } from '@styled-icons/boxicons-regular/MinusCircle';
 
 export const Container = styled.div`
   display: flex;
@@ -79,12 +80,23 @@ export const FormInput = styled.input`
 export const ImageUploadContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-right: 150px;
+  margin-left: 50px;
+  width: 800px;
   @media screen and (max-width: 800px) {
     margin-right: 0px;
-    align-self: flex-start;
-    margin-left: 15px;
+    align-self: center;
+    margin-left: 0px;
+    margin-top: 20px;
+    width: 90vw;
   }
+`;
+
+export const ImagePreviewContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-flow: wrap;
+  width: 100%;
 `;
 
 export const CategorySelect = styled.select`
@@ -119,15 +131,29 @@ export const PostPrev = styled.div`
 export const ImagePreview = styled.img`
   flex-direction: row;
   justify-content: center;
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
+  margin: 5px 3px;
+  /* flex-wrap: wrap; */
+`;
+
+export const ImagePreviewButtons = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+  margin: 1px 5px;
+  padding: 2px 5px;
 `;
 
 export const Gal = styled(Gallery)`
   width: 150px;
   height: 150px;
   margin-top: 20px;
-  color: black;
+  color: #eb392e;
   cursor: pointer;
   @media screen and (max-width: 800px) {
     width: 75px;
@@ -145,4 +171,12 @@ export const ButtonContainer = styled.div`
     justify-content: center;
     padding: 10px 0px;
   }
+`;
+
+export const Remove = styled(MinusCircle)`
+  width: 30px;
+  height: 30px;
+  color: #eb392e;
+  margin: 0px 3px;
+  cursor: pointer;
 `;

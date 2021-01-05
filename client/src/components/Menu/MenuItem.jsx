@@ -31,7 +31,7 @@ const MenuItem = ({ product, addProduct }) => {
         </ProductNameContainer>
 
         <RestaurantName> From {restaurant}</RestaurantName>
-        <Price>₦ {price}</Price>
+        <Price>₦ {price.toLocaleString()}</Price>
         <Add onClick={() => addProduct(product)}>
           <Tray /> Add to Tray
         </Add>

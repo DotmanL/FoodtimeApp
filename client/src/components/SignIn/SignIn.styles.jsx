@@ -10,6 +10,7 @@ export const SignInContainer = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
+  margin-top: 100px;
   @media screen and (max-width: 800px) {
     margin-top: -50px;
     background-image: none;

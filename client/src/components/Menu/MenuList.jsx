@@ -35,6 +35,7 @@ import {
 import { Header } from './Menu.styles';
 import Spinner from '../Spinner/Spinner';
 import { Link, useParams } from 'react-router-dom';
+import ButtonSpin from '../ButtonSpin/ButtonSpin';
 
 const MenuList = ({
   getProductsById,
@@ -68,7 +69,9 @@ const MenuList = ({
                   {product && product.description}
                 </ProductDescription>
 
-                <ProductPrice> ₦{product && product.price}</ProductPrice>
+                <ProductPrice>
+                  ₦{product && product.price.toLocaleString()}
+                </ProductPrice>
                 <Button onClick={() => addProduct(product)}>
                   <Tray /> Add To Tray
                 </Button>
@@ -92,6 +95,8 @@ const MenuList = ({
                       <AutoplaySlider
                         animation="foldOutAnimation"
                         play={true}
+                        startup={true}
+                        startupScreen={<ButtonSpin />}
                         cancelOnInteraction={false} // should stop playing on user interaction
                         interval={6000}
                         cssModule={AS}

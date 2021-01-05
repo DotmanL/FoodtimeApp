@@ -17,7 +17,6 @@ const initialState = {
   products: [],
   cartItems: [],
   loading: true,
-  adding: false,
   creating: false,
   error: {},
 };
@@ -43,7 +42,7 @@ const productReducer = (state = initialState, action) => {
     case CREATE_PRODUCT_START: {
       return {
         ...state,
-        adding: true,
+        creating: true,
       };
     }
 
@@ -52,7 +51,7 @@ const productReducer = (state = initialState, action) => {
         ...state,
         product: payload,
         loading: false,
-        adding: false,
+        creating: false,
       };
     }
 

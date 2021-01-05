@@ -117,7 +117,7 @@ export const ProductImage = styled.img`
 export const ProductName = styled.h2`
   font-size: 18px;
   background: #eb392e;
-  border-radius: 20px;
+  border-radius: 8px;
   color: white;
   padding: 10px 20px;
   margin-top: 25px;
@@ -129,11 +129,11 @@ export const ProductName = styled.h2`
 
 export const ProductsName = styled.h2`
   font-size: 18px;
-  background: black;
-  border-radius: 5px;
+  background: #eb392e;
+  border-radius: 8px;
   color: white;
-  padding: 10px 15px;
-  margin-top: 45px;
+  padding: 10px 20px;
+  margin-top: 50px;
   text-align: center;
   @media screen and (max-width: 800px) {
     font-size: 15px;
