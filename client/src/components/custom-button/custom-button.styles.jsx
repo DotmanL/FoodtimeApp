@@ -72,6 +72,7 @@ export const CustomButtonContainer = styled.button`
   align-items: center;
   justify-content: center;
   padding: 5px 10px;
+  opacity: ${(props) => (props.disabled ? '0.6' : '1')};
 
   ${getButtonStyles}
   @media screen and (max-width: 800px) {

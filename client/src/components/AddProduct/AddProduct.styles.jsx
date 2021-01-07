@@ -48,10 +48,12 @@ export const Main = styled.div`
 export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
+
   height: auto;
   width: 50%;
   @media screen and (max-width: 800px) {
     width: 90%;
+    align-items: center;
   }
 `;
 

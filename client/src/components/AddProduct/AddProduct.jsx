@@ -44,6 +44,7 @@ const AddProduct = ({
 
   const [image, setImage] = useState({ preview: '', images: [], raw: '' });
   const [productDetails, setProductDetails] = useState(initialState);
+  const [showUpload, setShowUpload] = useState(true);
 
   const {
     productName,
@@ -68,12 +69,16 @@ const AddProduct = ({
 
       const mapped = imageArray.map((file) => ({
         ...file,
+
         preview: URL.createObjectURL(file),
       }));
 
+      // console.log(mapped, 'mapped');
+
+      setShowUpload(false);
       setImage({
         preview: mapped,
-        raw: event.target.files,
+        raw: imageArray,
       });
     }
   };
@@ -93,7 +98,6 @@ const AddProduct = ({
     createProduct(data);
     setProductDetails(initialState);
     setImage('');
-
     // return <Redirect to="/menu" />;
   };
 
@@ -101,12 +105,47 @@ const AddProduct = ({
     const currentImagePreview = image.preview.filter(
       (previewUrl, i) => i !== event
     );
+
+    const imageRemove = image.raw.filter((imagesSelected, i) => i !== event);
+
     setImage({
       preview: currentImagePreview,
+      raw: imageRemove,
     });
+
+    if (image.preview.length === 1) {
+      setShowUpload(true);
+    }
+    // console.log(image.preview, 'image prev');
+    // console.log(image.raw, 'image raw');
   };
 
-  const onUpdate = (event, i) => {};
+  const hiddenFileInput = React.useRef(null);
+
+  const handleClick = () => {
+    hiddenFileInput.current.click();
+  };
+
+  const onUpdate = (event) => {
+    const fileUploaded = event.target.files[0];
+
+    const newPreview = image.preview.splice(0, 1, {
+      preview: URL.createObjectURL(fileUploaded),
+    });
+
+    const updatedImages = image.raw.splice(0, 1, fileUploaded);
+
+    console.log(newPreview, 'new pOreview');
+    console.log(image.preview, 'image prev');
+
+    setImage({
+      preview: newPreview,
+      raw: updatedImages,
+    });
+
+    console.log(image.preview, 'image prev final');
+    console.log(image.raw, 'image raw final');
+  };
 
   return (
     <Container>
@@ -164,19 +203,27 @@ const AddProduct = ({
           <ImageUploadContainer>
             <PostPrev>
               <ImagePreviewContainer>
-                {image.preview ? (
+                {image.preview &&
                   image.preview.map((file, i) => (
                     <div key={i}>
                       <ImagePreview src={file.preview} />
                       <ImagePreviewButtons>
-                        <h3 onClick={() => onUpdate(i)}>update </h3>
+                        <input
+                          type="file"
+                          name="image"
+                          id="upload"
+                          ref={hiddenFileInput}
+                          onChange={onUpdate}
+                          style={{ display: 'none' }}
+                        />
+                        <h3 onClick={handleClick}>Update</h3>
                         <Remove title="Remove" onClick={() => onRemove(i)} />
                       </ImagePreviewButtons>
                     </div>
-                  ))
-                ) : (
+                  ))}
+                {showUpload && (
                   <>
-                    <label htmlFor="upload">
+                    <label htmlFor="upload" multiple>
                       <Gal />
                     </label>
                   </>
@@ -195,7 +242,7 @@ const AddProduct = ({
           </ImageUploadContainer>
         </Main>
         <ButtonContainer>
-          <CustomButton type="submit">
+          <CustomButton disabled={image.raw.length === 0} type="submit">
             {!creating && <span>Create Product</span>}
             {creating && <ButtonSpin />}
           </CustomButton>
