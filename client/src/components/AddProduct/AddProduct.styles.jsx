@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { Gallery } from '@styled-icons/remix-line/Gallery';
+import { ReactComponent as Gallery } from './assets/galleryicon.svg';
+import { GalleryUpload } from '@styled-icons/remix-fill/GalleryUpload';
 import { MinusCircle } from '@styled-icons/boxicons-regular/MinusCircle';
 
 export const Container = styled.div`
@@ -12,7 +13,7 @@ export const Container = styled.div`
   color: white;
   margin-top: 100px;
   @media screen and (max-width: 800px) {
-    margin-top: 30px;
+    margin-top: 15px;
     justify-content: center;
   }
 `;
@@ -21,15 +22,16 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   background-color: white;
-  border: 2px solid #eb392e;
-  width: 80%;
+  border: 0px solid #eb392e;
+  width: 90%;
   margin-top: 10px;
   margin-bottom: 30px;
   border-radius: 8px;
-  padding: 50px 30px 20px 30px;
+  padding: 30px 70px 30px 70px;
   @media screen and (max-width: 800px) {
     width: 95%;
     margin-top: 0px;
+    border: 0px solid #eb392e;
     padding: 10px 5px 10px 5px;
   }
 `;
@@ -48,9 +50,7 @@ export const Main = styled.div`
 export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
-
   height: auto;
-  width: 50%;
   @media screen and (max-width: 800px) {
     width: 90%;
     align-items: center;
@@ -82,13 +82,14 @@ export const FormInput = styled.input`
 export const ImageUploadContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 50px;
-  width: 800px;
+  flex: 2;
+  align-items: center;
+  justify-content: space-between;
   @media screen and (max-width: 800px) {
     margin-right: 0px;
     align-self: center;
     margin-left: 0px;
-    margin-top: 20px;
+    margin-top: 2px;
     width: 90vw;
   }
 `;
@@ -97,6 +98,8 @@ export const ImagePreviewContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 10px;
+  align-self: center;
   flex-flow: wrap;
   width: 100%;
 `;
@@ -133,28 +136,72 @@ export const PostPrev = styled.div`
 export const ImagePreview = styled.img`
   flex-direction: row;
   justify-content: center;
-  width: 160px;
-  height: 160px;
-  margin: 5px 3px;
-  /* flex-wrap: wrap; */
+  width: 180px;
+  height: 180px;
+  margin: 5px 3px 0px 2px;
+  /* @media screen and (max-width: 800px) {
+    width: 120px;
+    height: 120px;
+  } */
 `;
 
-export const ImagePreviewButtons = styled.div`
+export const PreviewLabel = styled.label`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const ImagePreviewButtons = styled.button`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  color: white;
+  justify-content: space-evenly;
+  justify-self: center;
+  border: 1px solid black;
+  border-radius: 5px;
   background-color: black;
+  color: white;
+  outline: none;
   cursor: pointer;
-  margin: 1px 5px;
-  padding: 2px 5px;
+  padding: 2px 32px;
+  margin: 2px 3px;
+  width: 180px;
+  height: 35px;
+`;
+
+export const Remove = styled(MinusCircle)`
+  width: 25px;
+  height: 25px;
+  color: #eb392e;
+  margin-left: 10px;
+  cursor: pointer;
 `;
 
 export const Gal = styled(Gallery)`
   width: 150px;
   height: 150px;
-  margin-top: 20px;
+  margin-top: 10px;
+  color: #eb392e;
+  cursor: pointer;
+  @media screen and (max-width: 800px) {
+    width: 75px;
+    height: 75px;
+  }
+`;
+
+export const AddMore = styled.div`
+  width: auto;
+  height: auto;
+  padding: 2px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const Add = styled(GalleryUpload)`
+  width: 180px;
+  height: 180px;
+  margin-top: 15px;
   color: #eb392e;
   cursor: pointer;
   @media screen and (max-width: 800px) {
@@ -166,19 +213,9 @@ export const Gal = styled(Gallery)`
 export const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  margin-top: 20px;
-  padding: 0px 150px;
+  justify-content: center;
   @media screen and (max-width: 800px) {
     justify-content: center;
     padding: 10px 0px;
   }
-`;
-
-export const Remove = styled(MinusCircle)`
-  width: 30px;
-  height: 30px;
-  color: #eb392e;
-  margin: 0px 3px;
-  cursor: pointer;
 `;

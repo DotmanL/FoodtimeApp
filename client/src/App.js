@@ -70,7 +70,7 @@ const App = () => {
             <Route exact path="/menu" component={MenuPage} />
             <Route exact path="/checkout" component={CheckoutPage} />
             <Route exact path="/products/:id" component={MenuList} />
-            <Route exact path="/add-product" component={AddProduct} />
+            <Route exact path="/dashboard/add-product" component={AddProduct} />
             <AdminRoute exact path="/admin" component={Admin} />
             <AdminRoute
               exact

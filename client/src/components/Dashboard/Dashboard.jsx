@@ -81,7 +81,9 @@ const Dashboard = ({
             </div>
             <TopText>Hello, {user && user.firstName} </TopText>
             {user && user.role === 'vendor' ? (
-              <AddProduct to="/add-product">Add New Product</AddProduct>
+              <AddProduct to="/dashboard/add-product">
+                Add New Product
+              </AddProduct>
             ) : null}
           </Top>
 

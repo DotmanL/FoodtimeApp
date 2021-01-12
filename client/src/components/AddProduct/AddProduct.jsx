@@ -14,11 +14,14 @@ import {
   ImageUploadContainer,
   ImagePreviewContainer,
   ImagePreview,
+  PreviewLabel,
   ImagePreviewButtons,
   CategorySelect,
   ImageUpload,
+  AddMore,
   PostPrev,
   Gal,
+  Add,
   Remove,
   ButtonContainer,
 } from './AddProduct.styles';
@@ -42,9 +45,10 @@ const AddProduct = ({
     getCategories();
   }, [getCategories]);
 
-  const [image, setImage] = useState({ preview: '', images: [], raw: '' });
+  const [image, setImage] = useState({ preview: '', raw: '' });
   const [productDetails, setProductDetails] = useState(initialState);
   const [showUpload, setShowUpload] = useState(true);
+  const [addMore, setAddMore] = useState(false);
 
   const {
     productName,
@@ -63,19 +67,16 @@ const AddProduct = ({
     if (event.target.files.length) {
       const imageArray = Array.from(event.target.files);
 
-      setImage({
-        images: imageArray,
-      });
-
       const mapped = imageArray.map((file) => ({
         ...file,
-
         preview: URL.createObjectURL(file),
       }));
 
-      // console.log(mapped, 'mapped');
-
       setShowUpload(false);
+      setAddMore(true);
+
+      console.log(image.preview, 'on ADDs');
+
       setImage({
         preview: mapped,
         raw: imageArray,
@@ -101,6 +102,31 @@ const AddProduct = ({
     // return <Redirect to="/menu" />;
   };
 
+  const hiddenFileInput = React.useRef(null);
+
+  const handleClick = () => {
+    hiddenFileInput.current.click();
+  };
+
+  const onAdd = (event) => {
+    if (event.target.files.length) {
+      const imageArray = Array.from(event.target.files);
+
+      const mapNewImages = imageArray.map((file) => ({
+        ...file,
+        preview: URL.createObjectURL(file),
+      }));
+
+      image.preview.push(...mapNewImages);
+      image.raw.push(...imageArray);
+
+      setImage({
+        preview: image.preview,
+        raw: image.raw,
+      });
+    }
+  };
+
   const onRemove = (event) => {
     const currentImagePreview = image.preview.filter(
       (previewUrl, i) => i !== event
@@ -114,37 +140,9 @@ const AddProduct = ({
     });
 
     if (image.preview.length === 1) {
+      setAddMore(false);
       setShowUpload(true);
     }
-    // console.log(image.preview, 'image prev');
-    // console.log(image.raw, 'image raw');
-  };
-
-  const hiddenFileInput = React.useRef(null);
-
-  const handleClick = () => {
-    hiddenFileInput.current.click();
-  };
-
-  const onUpdate = (event) => {
-    const fileUploaded = event.target.files[0];
-
-    const newPreview = image.preview.splice(0, 1, {
-      preview: URL.createObjectURL(fileUploaded),
-    });
-
-    const updatedImages = image.raw.splice(0, 1, fileUploaded);
-
-    console.log(newPreview, 'new pOreview');
-    console.log(image.preview, 'image prev');
-
-    setImage({
-      preview: newPreview,
-      raw: updatedImages,
-    });
-
-    console.log(image.preview, 'image prev final');
-    console.log(image.raw, 'image raw final');
   };
 
   return (
@@ -207,26 +205,40 @@ const AddProduct = ({
                   image.preview.map((file, i) => (
                     <div key={i}>
                       <ImagePreview src={file.preview} />
-                      <ImagePreviewButtons>
-                        <input
-                          type="file"
-                          name="image"
-                          id="upload"
-                          ref={hiddenFileInput}
-                          onChange={onUpdate}
-                          style={{ display: 'none' }}
-                        />
-                        <h3 onClick={handleClick}>Update</h3>
-                        <Remove title="Remove" onClick={() => onRemove(i)} />
+                      <ImagePreviewButtons
+                        title="Remove"
+                        onClick={() => onRemove(i)}
+                      >
+                        <h3>Remove</h3>
+                        <Remove />
                       </ImagePreviewButtons>
                     </div>
                   ))}
                 {showUpload && (
                   <>
-                    <label htmlFor="upload" multiple>
+                    <PreviewLabel htmlFor="upload" multiple>
+                      <h3 style={{ color: '#eb392e' }}>
+                        Maximum of 6 pictures
+                      </h3>
                       <Gal />
-                    </label>
+                    </PreviewLabel>
                   </>
+                )}
+                {addMore && (
+                  <AddMore>
+                    <input
+                      type="file"
+                      name="image"
+                      id="upload"
+                      multiple
+                      ref={hiddenFileInput}
+                      onChange={onAdd}
+                      style={{ display: 'none' }}
+                    />
+
+                    <Add onClick={handleClick} />
+                    <h3>Add More Images</h3>
+                  </AddMore>
                 )}
               </ImagePreviewContainer>
             </PostPrev>
@@ -239,14 +251,14 @@ const AddProduct = ({
               style={{ display: 'none' }}
               required
             />
+            <ButtonContainer>
+              <CustomButton type="submit">
+                {!creating && <span>Create Product</span>}
+                {creating && <ButtonSpin />}
+              </CustomButton>
+            </ButtonContainer>
           </ImageUploadContainer>
         </Main>
-        <ButtonContainer>
-          <CustomButton disabled={image.raw.length === 0} type="submit">
-            {!creating && <span>Create Product</span>}
-            {creating && <ButtonSpin />}
-          </CustomButton>
-        </ButtonContainer>
       </Form>
     </Container>
   );
@@ -266,3 +278,26 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, { createProduct, getCategories })(
   AddProduct
 );
+
+//   <input
+//   type="file"
+//   name="image"
+//   id="upload"
+//   ref={hiddenFileInput}
+//   onChange={(event) => onUpdate(event, i)}
+//   style={{ display: 'none' }}
+// />
+// <h3 onClick={handleClick}>Update</h3>
+// const imageIndex = (event, i) => {
+//   const newImagePreview = image.preview.filter((previewUrl, i) => !i);
+//   console.log(newImagePreview, 'currr');
+
+//   return image.preview.indexOf(newImagePreview);
+// };
+
+// const onUpdate = (event, i) => {
+//   const fileUploaded = event.target.files[0];
+//   image.preview.splice(image.preview.findIndex(imageIndex), 1, {
+//     preview: URL.createObjectURL(fileUploaded),
+//   });
+// };
