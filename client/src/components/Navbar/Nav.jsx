@@ -1,11 +1,12 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { signout } from '../../Redux/User/user.actions';
-import NavbarLinks from './NavLinks';
+import NavbarLinks from './NavBarLinks';
 import NavMobile from './NavMobile';
 import PropTypes from 'prop-types';
 import CartIcon from '../Cart/CartIcon';
 import CartDropDown from '../CartDropDown/CartDropDown';
+import Search from '../Search/Search';
 
 import {
   Navigation,
@@ -13,12 +14,9 @@ import {
   LogoContainer,
   Logo,
   LogoText,
+  SearchContainer,
   Navbox,
   Hamburger,
-  // SvgLink,
-  // Si,
-  // Su,
-  // Dash,
   Cart,
   NavContainer,
 } from './Nav.styles';
@@ -60,12 +58,13 @@ const Nav = ({
         <LogoText to="/">Foodtime</LogoText>
       </LogoContainer>
 
+      <SearchContainer>
+        <Search />
+      </SearchContainer>
+
       <NavContainer onClick={() => setNavbarOpen(false)}>
         {!loading && isAuthenticated ? (
           <>
-            {/* <Link to={`/profile/${user && user._id}`}>
-              <Dash />
-            </Link> */}
             <Cart>
               <CartIcon />
               {!hidden ? null : <CartDropDown />}
@@ -73,12 +72,6 @@ const Nav = ({
           </>
         ) : (
           <Fragment>
-            {/* <SvgLink to="/signup/customer/">
-              <Su />
-            </SvgLink>
-            <SvgLink to="/signin">
-              <Si />
-            </SvgLink> */}
             <Cart>
               <CartIcon />
               {!hidden ? null : <CartDropDown />}

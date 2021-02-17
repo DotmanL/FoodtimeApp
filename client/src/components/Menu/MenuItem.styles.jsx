@@ -14,7 +14,7 @@ export const Card = styled.div`
   box-shadow: 5px 5px 5px 5px #888888;
   border-radius: 8px;
   width: auto;
-  margin: 40px 40px 40px 40px;
+  margin: 10px 40px 40px 40px;
   height: auto;
   padding-bottom: 15px;
   animation: 5s ${wobAnimation};

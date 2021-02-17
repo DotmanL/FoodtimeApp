@@ -3,7 +3,6 @@ import React, { Fragment } from 'react';
 import {
   Container,
   Header,
-  SearchContainer,
   Main,
   TitleContainer,
   Title,
@@ -28,7 +27,6 @@ import {
   // Dash,
 } from './Homepage.styles';
 
-import Search from '../../components/Search/Search';
 import CountUp from 'react-countup';
 // import ScrollAnimation from 'react-animate-on-scroll';
 
@@ -37,9 +35,6 @@ const Homepage = () => {
     <Fragment>
       <Container>
         <Header>
-          <SearchContainer>
-            <Search />
-          </SearchContainer>
           <Main>
             <TitleContainer>
               <Title> Order your meals from the Best Restaurants</Title>

@@ -6,6 +6,9 @@ const Container = styled.div`
   position: relative;
   min-height: 100vh;
   background-color: #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-bottom: 5px;
   width: 100vw;
   @media screen and (max-width: 800px) {

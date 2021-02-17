@@ -31,7 +31,7 @@ export const NavItem = styled.div`
     flex-direction: column;
     align-items: center;
     font-size: 20px;
-    margin-top: 50px;
+    margin-top: 20px;
     z-index: 6;
   }
 `;

@@ -8,13 +8,21 @@ import CartDropDown from '../CartDropDown/CartDropDown';
 import {
   NavItem,
   Sos,
-  Dropdown,
+  DropdownSignUp,
   Opt,
   SignUpItem,
-  Welcome,
+  DashBoardDiv,
+  DashBoardDrop,
+  DashBoardDropItem,
+  DashBoardDropLink,
+  DashBoardIcon,
+  FoodMenuIcon,
+  AccountIcon,
+  Caret,
   NavContainer,
   NavItems,
-} from './NavLinks.styles';
+  Welcome,
+} from './NavBarLinks.styles';
 
 const NavLinks = ({
   user: { isAuthenticated, loading, user },
@@ -22,27 +30,54 @@ const NavLinks = ({
   signout,
 }) => {
   const [toggle, setToggle] = useState(false);
+  const [hiddenDrop, setHiddenDrop] = useState(false);
 
   const userLinks = (
     <Fragment>
       <NavContainer>
         <NavItems>
-          <Welcome> Hi, {user && user.firstName.toLowerCase()}</Welcome>
-          <NavItem to={`/profile/${user && user._id}`}> Dashboard </NavItem>
+          <NavItem>
+            <DashBoardDiv onClick={() => setHiddenDrop(!hiddenDrop)}>
+              <DashBoardIcon title="Profile" />
+              <Caret />
+            </DashBoardDiv>
+
+            {hiddenDrop && (
+              <DashBoardDrop>
+                <Welcome> Hi, {user && user.firstName.toLowerCase()} </Welcome>
+
+                <DashBoardDropItem onClick={() => setHiddenDrop(!hiddenDrop)}>
+                  <AccountIcon />
+                  <DashBoardDropLink to={`/profile/${user && user._id}`}>
+                    Account
+                  </DashBoardDropLink>
+                </DashBoardDropItem>
+              </DashBoardDrop>
+            )}
+          </NavItem>
 
           {isAuthenticated && user && user.role === 'admin' && (
             <NavItem to="/admin"> Admin</NavItem>
           )}
-          <NavItem to="/menu">Menu</NavItem>
+          <NavItem to="/menu">
+            <FoodMenuIcon title="Menu" />
+          </NavItem>
 
           <NavItem to="/" onClick={signout}>
-            SIGN OUT <Sos to="/" title="Sign Out" onClick={signout} />
+            <h3>
+              <Sos to="/" title="Sign Out" onClick={signout} />
+            </h3>
           </NavItem>
-          <div style={{ marginLeft: '50px', marginTop: '12px' }}>
+          <div
+            style={{
+              marginLeft: '50px',
+              marginTop: '10px',
+            }}
+          >
             <CartIcon />
           </div>
         </NavItems>
-        {!hidden ? null : <CartDropDown />}
+        <div>{!hidden ? null : <CartDropDown />}</div>
       </NavContainer>
     </Fragment>
   );
@@ -51,7 +86,9 @@ const NavLinks = ({
     <>
       <NavContainer>
         <NavItems>
-          <NavItem to="/menu">Menu</NavItem>
+          <NavItem to="/menu">
+            <FoodMenuIcon title="Menu" />
+          </NavItem>
           <div
             style={{
               display: 'flex',
@@ -62,14 +99,14 @@ const NavLinks = ({
             <SignUpItem onClick={() => setToggle(!toggle)}>Sign Up</SignUpItem>
 
             {toggle && (
-              <Dropdown>
+              <DropdownSignUp>
                 <Opt to="/signup/customer" onClick={() => setToggle(false)}>
                   Sign up as Customer
                 </Opt>
                 <Opt to="/signup/restaurant" onClick={() => setToggle(false)}>
                   Sign up as Restaurant
                 </Opt>
-              </Dropdown>
+              </DropdownSignUp>
             )}
           </div>
           <NavItem to="/signin">SignIn</NavItem>

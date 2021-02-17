@@ -32,6 +32,7 @@ const Footer = () => {
               <Fli>Epe</Fli>
               <Fli>Ikorodu</Fli>
             </Ftext>
+
             <Ftext>
               <Lheader>Menus</Lheader>
               <Ldiv />
@@ -40,6 +41,7 @@ const Footer = () => {
               <Fli>Smoothies</Fli>
               <Fli> Pastries</Fli>
             </Ftext>
+
             <Ftext>
               <Lheader>Links</Lheader>
               <Ldiv />
@@ -50,6 +52,7 @@ const Footer = () => {
               <Fli>Make features request</Fli>
               <Fli>Privacy Policy</Fli>
             </Ftext>
+
             <Ftext>
               <Lheader>Connect</Lheader>
               <Ldiv />

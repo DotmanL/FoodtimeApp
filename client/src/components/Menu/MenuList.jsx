@@ -15,9 +15,12 @@ import {
   Container,
   Main,
   Back,
+  TitleContainer,
   Title,
   ItemContainer,
   Item,
+  ItemHeader,
+  BackLink,
   ItemDescription,
   ProductImageContainer,
   ProductImage,
@@ -34,8 +37,8 @@ import {
 } from './MenuList.styles';
 import { Header } from './Menu.styles';
 import Spinner from '../Spinner/Spinner';
-import { Link, useParams } from 'react-router-dom';
-import ButtonSpin from '../ButtonSpin/ButtonSpin';
+import { useParams } from 'react-router-dom';
+// import ButtonSpin from '../ButtonSpin/ButtonSpin';
 
 const MenuList = ({
   getProductsById,
@@ -56,9 +59,7 @@ const MenuList = ({
         <Spinner />
       ) : (
         <Container>
-          <Header>
-            <Title> {product && product.productName}</Title>
-          </Header>
+          <Header />
           <Main>
             <ItemContainer>
               <ItemDescription>
@@ -77,17 +78,14 @@ const MenuList = ({
                 </Button>
               </ItemDescription>
               <Item>
-                <Link
-                  style={{
-                    color: 'black',
-                    alignSelf: 'flex-start',
-                    marginLeft: '10px',
-                    marginTop: '5px',
-                  }}
-                  to="/menu"
-                >
-                  <Back /> Menu
-                </Link>
+                <ItemHeader>
+                  <BackLink to="/menu">
+                    <Back /> <h4>Menu</h4>
+                  </BackLink>
+                  <TitleContainer>
+                    <Title> {product && product.productName}</Title>
+                  </TitleContainer>
+                </ItemHeader>
 
                 {product && product.productImage.length > 1 ? (
                   <>
@@ -95,8 +93,8 @@ const MenuList = ({
                       <AutoplaySlider
                         animation="foldOutAnimation"
                         play={true}
-                        startup={true}
-                        startupScreen={<ButtonSpin />}
+                        // startup={true}
+                        // startupScreen={<ButtonSpin />}
                         cancelOnInteraction={false} // should stop playing on user interaction
                         interval={6000}
                         cssModule={AS}

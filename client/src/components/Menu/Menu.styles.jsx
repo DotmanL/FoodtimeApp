@@ -4,30 +4,7 @@ import mheader from './assets/menuheader-min.png';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-export const Items = styled.div`
-  width: 100vw;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  @media screen and (max-width: 800px) {
-    height: auto;
-  }
-`;
-
-export const Title = styled.h1`
-  font-size: 50px;
-  color: white;
-  font-weight: 100;
-  width: 90vw;
-  @media screen and (max-width: 800px) {
-    font-size: 20px;
-    width: 90vw;
-    margin-top: 50px;
-  }
+  align-items: center;
 `;
 
 export const Header = styled.div`
@@ -50,5 +27,45 @@ export const Header = styled.div`
     height: 80px;
     margin-top: -50px;
     border-bottom: 1px solid red;
+  }
+`;
+
+export const TitleContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 0px 30px 0px 30px;
+  align-items: center;
+  justify-self: center;
+  margin-top: 0px;
+  width: 80%;
+  height: 40px;
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    justify-content: center;
+  }
+`;
+
+export const Title = styled.h2`
+  font-size: 25px;
+  color: #eb392e;
+  font-weight: 700;
+  background-color: white;
+  padding: 3px 10px;
+  border-radius: 8px;
+  @media screen and (max-width: 800px) {
+    font-size: 20px;
+  }
+`;
+
+export const Items = styled.div`
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  @media screen and (max-width: 800px) {
+    height: auto;
   }
 `;

@@ -99,6 +99,8 @@ const AddProduct = ({
     createProduct(data);
     setProductDetails(initialState);
     setImage('');
+    setAddMore(false);
+    setShowUpload(true);
     // return <Redirect to="/menu" />;
   };
 

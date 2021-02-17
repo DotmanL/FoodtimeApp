@@ -28,7 +28,7 @@ export const Header = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  /* align-items: center; */
   font-family: 'PT Serif', serif;
   margin-top: 0px;
   @media screen and (max-width: 800px) {
@@ -37,34 +37,26 @@ export const Header = styled.div`
   }
 `;
 
-export const SearchContainer = styled.div`
-  margin-top: -50px;
-  @media screen and (max-width: 800px) {
-    margin-top: -40px;
-    align-self: center;
-  }
-`;
-
 export const Main = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
-  justify-content: space-between;
+  margin-top: 40px;
   padding: 10px 30px;
   @media screen and (max-width: 800px) {
     display: flex;
     flex-direction: column;
     padding: 0px 0px;
+    margin-top: 0px;
   }
 `;
 
 export const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
-  align-items: flex-start;
+  align-items: center;
   @media screen and (max-width: 800px) {
-    margin-top: 50px;
+    margin-top: 0px;
     align-items: center;
   }
 `;
@@ -73,8 +65,7 @@ export const Title = styled.h1`
   color: white;
   font-weight: 300;
   width: 50vw;
-  text-align: justify;
-  margin-left: 30px;
+  text-align: center;
   @media screen and (max-width: 800px) {
     font-size: 25px;
     width: 90vw;
@@ -108,7 +99,7 @@ export const SubContent = styled.div`
   justify-content: center;
   text-align: center;
   font-size: 25px;
-  margin-top: 200px;
+  margin-top: 20px;
   @media screen and (max-width: 800px) {
     font-size: 15px;
     width: 100%;
@@ -134,8 +125,8 @@ export const Content = styled.div`
 export const Cheader = styled.h1`
   font-size: 30px;
   font-weight: bold;
-  color: #eb392e;
-
+  /*   color: black; */
+  color: black;
   @media screen and (max-width: 800px) {
     font-size: 25px;
     width: 70vw;
@@ -145,10 +136,11 @@ export const Ctext = styled.p`
   font-size: 30px;
   text-align: justify;
   margin-top: -9px;
+  font-style: italic;
   padding-bottom: 30px;
   padding-top: 10px;
   width: 70vw;
-  color: #eb392e;
+  color: black;
   @media screen and (max-width: 800px) {
     font-size: 20px;
     width: 80vw;
@@ -193,7 +185,7 @@ export const Oitems = styled.div`
 export const Oheader = styled.h2`
   font-size: 30px;
   margin-top: -15px;
-  color: #eb392e;
+  color: black;
 
   @media screen and (max-width: 800px) {
     font-size: 25px;
@@ -213,7 +205,7 @@ export const Clabels = styled.h3`
   display: flex;
   flex-direction: row;
   font-size: 20px;
-  color: #eb392e;
+  color: black;
   margin-top: 20px;
   @media screen and (max-width: 800px) {
     font-size: 18px;

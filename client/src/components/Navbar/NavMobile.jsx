@@ -18,28 +18,21 @@ const NavMobile = ({ user: { isAuthenticated, loading, user }, signout }) => {
   const userLinks = (
     <Fragment>
       <Welcome> Hi, {user && user.firstName.toLowerCase()}</Welcome>
-
-      {isAuthenticated && user && user.role === 'admin' && (
-        <NavItem>
+      <NavItem>
+        {isAuthenticated && user && user.role === 'admin' && (
           <NavLink to="/admin">
             <Dash /> Admin
           </NavLink>
-        </NavItem>
-      )}
+        )}
 
-      <NavItem>
         <NavLink to={`/profile/${user && user._id}`}>
           <Dash /> Dashboard
         </NavLink>
-      </NavItem>
 
-      <NavItem>
         <NavLink to="/menu">
           <Food /> Menu
         </NavLink>
-      </NavItem>
 
-      <NavItem>
         <NavLink to="/" onClick={signout}>
           <Sos to="/" title="Sign Out" onClick={signout} /> SIGN OUT
         </NavLink>
@@ -60,13 +53,6 @@ const NavMobile = ({ user: { isAuthenticated, loading, user }, signout }) => {
           <Su /> Sign Up
         </NavLink>
       </NavItem>
-
-      {/* <NavItem>
-				<NavLink to="/signin">
-		
-					<Si /> SignIn
-				</NavLink>
-			</NavItem> */}
     </Fragment>
   );
 

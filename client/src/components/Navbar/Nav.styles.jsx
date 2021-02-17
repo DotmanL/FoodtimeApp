@@ -9,6 +9,7 @@ export const Navigation = styled.nav`
   height: 100px;
   width: 100vw;
   display: flex;
+  flex-direction: row;
   position: fixed;
   top: 0;
   box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.2);
@@ -78,8 +79,17 @@ export const LogoText = styled(Link)`
   }
 `;
 
+export const SearchContainer = styled.div`
+  display: flex;
+  justify-self: center;
+  width: 50%;
+`;
+
 export const Navbox = styled.div`
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   @media (max-width: 800px) {
     display: flex;
     flex-direction: column;

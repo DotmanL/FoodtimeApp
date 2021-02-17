@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { ReactComponent as fullb } from './assets/meal.svg';
 import { ArrowBackCircle } from '@styled-icons/ionicons-sharp/ArrowBackCircle';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   position: relative;
@@ -25,18 +26,52 @@ export const Main = styled.div`
   }
 `;
 
-export const Title = styled.h2`
-  font-size: 35px;
-  color: white;
-  font-weight: 500;
-  width: 90vw;
-  margin-top: 80px;
+export const ItemHeader = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   @media screen and (max-width: 800px) {
-    font-size: 20px;
-    width: 90vw;
-    margin-top: 50px;
+    margin-top: -20px;
   }
 `;
+
+export const BackLink = styled(Link)`
+  color: black;
+  display: flex;
+  padding: 2px 2px;
+  font-weight: 600;
+  font-size: 18px;
+  flex-direction: row;
+  align-items: center;
+  justify-self: flex-start;
+`;
+
+export const TitleContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 1px;
+  width: auto;
+  flex: 2;
+  height: 50px;
+`;
+
+export const Title = styled.h2`
+  font-size: 25px;
+  color: #eb392e;
+  margin-right: 90px;
+  font-weight: 700;
+  padding: 3px 10px;
+  background-color: white;
+  border-radius: 8px;
+  @media screen and (max-width: 800px) {
+    font-size: 20px;
+  }
+`;
+
 export const Back = styled(ArrowBackCircle)`
   width: 40px;
   height: 40px;
@@ -86,7 +121,7 @@ export const SliderDiv = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 5px;
+  margin-top: -14px;
   @media screen and (max-width: 800px) {
     width: 100vw;
   }

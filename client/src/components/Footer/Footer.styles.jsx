@@ -16,6 +16,8 @@ export const FooterContainer = styled.div`
   @media screen and (max-width: 800px) {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100vw;
     padding: 5px 0px 10px 0px;
   }
 `;
@@ -81,9 +83,8 @@ export const Ldiv = styled.div`
 export const Fcontent = styled.div`
   display: flex;
   flex-direction: row;
-  /* pointer-events: none; */
-  justify-content: space-between;
-  width: 90%;
+  justify-content: space-evenly;
+  width: 100%;
   padding: 10px 0px;
   @media screen and (max-width: 800px) {
     display: flex;
@@ -108,7 +109,7 @@ export const Ftext = styled.div`
   font-size: 16px;
   cursor: pointer;
   @media screen and (max-width: 800px) {
-    margin-left: 0px;
+    margin-left: 20px;
     font-size: 14px;
   }
 `;
