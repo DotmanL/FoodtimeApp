@@ -51,6 +51,7 @@ export const LogoContainer = styled.div`
   @media (max-width: 800px) {
     margin-top: 1px;
     margin-bottom: 5px;
+    justify-self: center;
   }
 `;
 
@@ -82,7 +83,9 @@ export const LogoText = styled(Link)`
 export const SearchContainer = styled.div`
   display: flex;
   justify-self: center;
-  width: 50%;
+  width: 40%;
+  @media (max-width: 800px) {
+  }
 `;
 
 export const Navbox = styled.div`
