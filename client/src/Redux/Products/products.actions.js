@@ -12,6 +12,8 @@ import {
   CLEAR_CART_PRODUCT,
   CREATE_PRODUCT_START,
   CREATE_PRODUCT,
+  SEARCH_PRODUCT_START,
+  SEARCH_PRODUCT,
 } from './products.types';
 
 //ADD product to cart
@@ -21,6 +23,24 @@ export const addProduct = (product) => async (dispatch) => {
     payload: product,
   });
   // toast.success('Product Added', { autoClose: 800 });
+};
+
+export const searchProducts = (query) => async (dispatch) => {
+  try {
+    dispatch({
+      type: SEARCH_PRODUCT_START,
+    });
+    const res = await axios.get(`/api/products/search?search=${query}`);
+    dispatch({
+      type: SEARCH_PRODUCT,
+      payload: res.data,
+    });
+  } catch (err) {
+    dispatch({
+      type: PRODUCTS_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status },
+    });
+  }
 };
 
 export const createProduct = (formData) => async (dispatch) => {
@@ -89,7 +109,7 @@ export const getProducts = () => async (dispatch) => {
       payload: res.data,
     });
   } catch (err) {
-    console.log(err, 'errror rsds');
+    //console.log(err, 'errror rsds');
     dispatch({
       type: PRODUCTS_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status },

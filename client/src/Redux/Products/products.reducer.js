@@ -8,6 +8,8 @@ import {
   CLEAR_CART_PRODUCT,
   CREATE_PRODUCT,
   CREATE_PRODUCT_START,
+  SEARCH_PRODUCT_START,
+  SEARCH_PRODUCT,
 } from './products.types';
 import { addItemToCart, removeItemFromCart } from './product.utils';
 
@@ -18,6 +20,7 @@ const initialState = {
   cartItems: [],
   loading: true,
   creating: false,
+  searchResults: [],
   error: {},
 };
 
@@ -52,6 +55,21 @@ const productReducer = (state = initialState, action) => {
         product: payload,
         loading: false,
         creating: false,
+      };
+    }
+
+    case SEARCH_PRODUCT_START: {
+      return {
+        ...state,
+        loading: true,
+        searchResults: [],
+      };
+    }
+    case SEARCH_PRODUCT: {
+      return {
+        ...state,
+        loading: false,
+        searchResults: payload,
       };
     }
 
