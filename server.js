@@ -14,7 +14,6 @@ app.use(express.urlencoded({ extended: true }));
 
 // app.get('/', (req, res) =>{
 //   res.send('Server is working ')
-
 // }
 
 app.use('/api/users', require('./routes/api/users'));

@@ -33,6 +33,7 @@ const productReducer = (state = initialState, action) => {
         ...state,
         products: payload,
         loading: false,
+        searchResults: [],
       };
 
     case TOGGLE_CART: {

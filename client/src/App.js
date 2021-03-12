@@ -72,7 +72,7 @@ const App = () => {
             <Route exact path="/checkout" component={CheckoutPage} />
             <Route exact path="/products/:id" component={MenuList} />
             <Route exact path="/dashboard/add-product" component={AddProduct} />
-            <Route exact path="/searchresults" component={SearchResult} />
+            <Route exact path="/search" component={SearchResult} />
             <AdminRoute exact path="/admin" component={Admin} />
             <AdminRoute
               exact
