@@ -20,6 +20,7 @@
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.22.0",
+    "concurrently": "^6.0.0",
     "dotenv": "^8.2.0",
     "email-templates": "^7.0.5",
     "express": "^4.17.1",
