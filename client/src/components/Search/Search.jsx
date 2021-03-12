@@ -17,8 +17,6 @@ const Search = () => {
 
     if (query.trim()) {
       history.push(`/search?q=${query}`);
-    } else {
-      history.push('/');
     }
     setQuery('');
   };
