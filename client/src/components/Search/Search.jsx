@@ -18,7 +18,7 @@ const Search = ({ searchProducts, product: { searchResults } }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    searchProducts(query);
+    // searchProducts(query);
     // history.push('/searchresults');
     console.log('Button Pressed');
   };
