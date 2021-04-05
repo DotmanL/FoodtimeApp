@@ -1,13 +1,11 @@
 import React from 'react';
-import { Container, Main, Header, Title } from './CheckoutPage.styles';
+import { Container, Main, Header } from './CheckoutPage.styles';
 import CartDetails from '../../components/Checkout/CartDetails';
 
 const CheckoutPage = () => {
   return (
     <Container>
-      <Header>
-        <Title>CHECKOUT</Title>
-      </Header>
+      <Header>{/* <Title>CHECKOUT</Title> */}</Header>
       <Main>
         <CartDetails />
       </Main>

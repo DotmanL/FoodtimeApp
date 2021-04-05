@@ -16,13 +16,13 @@ export const Container = styled.div`
   background: white;
   color: black;
   border: 2px solid #eb392e;
-  margin-top: 50px;
-  margin-left: -290px;
+  margin-top: 480px;
+  margin-left: 50px;
   animation: 1s ${wobAnimation};
 
   @media screen and (max-width: 800px) {
-    margin-left: -219px;
-    margin-top: 65px;
+    margin-left: -225px;
+    margin-top: 40px;
   }
 `;
 
