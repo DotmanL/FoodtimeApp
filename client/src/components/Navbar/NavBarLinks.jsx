@@ -77,7 +77,7 @@ const NavLinks = ({
             <CartIcon />
           </div>
         </NavItems>
-        <div>{!hidden ? null : <CartDropDown />}</div>
+        {!hidden ? null : <CartDropDown />}
       </NavContainer>
     </Fragment>
   );

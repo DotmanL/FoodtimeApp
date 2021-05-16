@@ -17,7 +17,7 @@ export const Container = styled.div`
   color: black;
   border: 2px solid #eb392e;
   margin-top: 500px;
-  margin-left: -5px;
+  margin-left: 20px;
   animation: 1s ${wobAnimation};
 
   @media screen and (max-width: 800px) {
