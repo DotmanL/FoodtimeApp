@@ -77,6 +77,7 @@ export const LogoText = styled(Link)`
   }
   @media (max-width: 800px) {
     font-size: 20px;
+    z-index: 99999;
   }
 `;
 

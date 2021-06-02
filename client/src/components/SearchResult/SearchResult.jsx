@@ -19,6 +19,16 @@ import {
 import { Tray } from '../Menu/MenuList.styles';
 import { Items } from '../Menu/Menu.styles';
 import Spinner from '../Spinner/Spinner';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  margin-top: 120px;
+  margin-bottom: 40px;
+  @media screen and (max-width: 800px) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+`;
 
 const SearchResult = ({
   addProduct,
@@ -38,7 +48,7 @@ const SearchResult = ({
       {loading ? (
         <Spinner />
       ) : (
-        <div style={{ marginTop: '120px' }}>
+        <Container>
           {searchResults.length > 0 ? (
             <Items>
               {searchResults.map((data, i) => (
@@ -65,7 +75,7 @@ const SearchResult = ({
               <h1>Product Does not exist</h1>
             </div>
           )}
-        </div>
+        </Container>
       )}
     </Fragment>
   );
