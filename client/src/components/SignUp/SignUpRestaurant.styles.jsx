@@ -28,6 +28,14 @@ export const Container = styled.div`
   @media screen and (max-width: 800px) {
     display: flex;
     flex-direction: column;
+    align-items: center;
+  }
+`;
+
+export const Form = styled.form`
+  margin-top: -40px;
+  @media screen and (max-width: 800px) {
+    margin-top: -20px;
   }
 `;
 
@@ -35,7 +43,7 @@ export const BgDiv = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   height: auto;
   width: 45vw;
   background-color: wheat;
@@ -69,36 +77,29 @@ export const FormDiv = styled.div`
 
 export const Header = styled.div`
   width: 100vw;
-  height: auto;
+  height: 120px;
   color: white;
   position: relative;
   background-image: url(${header});
   background-size: cover;
   background-repeat: no-repeat;
   box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  /* border-bottom: 1px solid #eb392e; */
-  font-family: 'PT Serif', serif;
   @media screen and (max-width: 800px) {
-    height: auto;
+    height: 160px;
+    margin-top: -120px;
     border-bottom: 1px solid red;
   }
 `;
 
 export const Title = styled.h1`
-  font-size: 36px;
-  color: white;
-  font-weight: 100;
-  width: 80vw;
-  margin-top: 60px;
+  font-size: 32px;
+  font-weight: 800;
+  color: #eb392e;
+  width: auto;
+  margin-top: 20px;
   @media screen and (max-width: 800px) {
     font-size: 16px;
-    width: 90vw;
-    margin-top: 60px;
+    margin-top: 7px;
   }
 `;
 

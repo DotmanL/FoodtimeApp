@@ -9,6 +9,7 @@ import Spinner from '../Spinner/Spinner';
 
 import {
   Container,
+  Header,
   Top,
   ImageContainer,
   TopText,
@@ -57,6 +58,7 @@ const Dashboard = ({
         <Spinner />
       ) : (
         <Container>
+          <Header />
           <Top>
             <div>
               {profile !== null && profile && profile.profileImage !== '' && (

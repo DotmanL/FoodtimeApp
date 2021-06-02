@@ -15,6 +15,7 @@ import {
   FormInput,
   Password,
   Bckg,
+  Header,
   ImageContainer,
   ButtonContainer,
   Fcontainer,
@@ -57,6 +58,7 @@ const SignIn = ({ signin, isAuthenticated, user: { loading, user } }) => {
 
   return (
     <Fragment>
+      <Header />
       <SignInContainer>
         <FormContainer>
           <SignInTitle>SIGN IN</SignInTitle>

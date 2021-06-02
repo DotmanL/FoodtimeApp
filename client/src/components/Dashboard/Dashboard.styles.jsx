@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import pheader from './profileHeader.jpg';
 import { Link } from 'react-router-dom';
+import header from '../SignUp/assets/restaurantheader-min.png';
 
 export const Container = styled.div`
   position: relative;
@@ -15,6 +16,23 @@ export const Container = styled.div`
   @media screen and (max-width: 800px) {
     width: 100vw;
     margin-top: 10px;
+  }
+`;
+
+export const Header = styled.div`
+  width: 100vw;
+  height: 120px;
+  margin-top: -80px;
+  color: white;
+  position: relative;
+  background-image: url(${header});
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+  @media screen and (max-width: 800px) {
+    height: 120px;
+    margin-top: -120px;
+    border-bottom: 1px solid red;
   }
 `;
 

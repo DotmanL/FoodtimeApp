@@ -12,20 +12,19 @@ export const Navigation = styled.nav`
   flex-direction: row;
   position: fixed;
   top: 0;
-
   text-transform: uppercase;
-  padding: 0 2vw;
+  padding: 0 0px;
   z-index: 999;
   margin: 0 auto;
   margin-bottom: -5px;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-self: center;
   @media (max-width: 800px) {
     /* box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.2); */
     position: sticky;
     display: flex;
     margin-top: -4px;
-    height: 50px;
+    height: 100px;
     top: 0;
   }
 `;
@@ -49,8 +48,9 @@ export const LogoContainer = styled.div`
   justify-content: center;
   margin-top: 3px;
   @media (max-width: 800px) {
-    margin-top: 1px;
+    margin-top: -50px;
     margin-bottom: 5px;
+    margin-left: 20px;
     justify-self: center;
   }
 `;
@@ -82,9 +82,12 @@ export const LogoText = styled(Link)`
 
 export const SearchContainer = styled.div`
   display: flex;
-  justify-self: center;
-  width: 40%;
+  flex-direction: row;
+  align-self: center;
+  width: 45%;
   @media (max-width: 800px) {
+    margin-top: 2px;
+    margin-left: -150px;
   }
 `;
 

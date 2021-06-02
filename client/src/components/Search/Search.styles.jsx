@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const FormContainer = styled.form`
-  width: 100vw;
+  width: auto;
   padding: 20px 20px;
   display: flex;
   position: relative;
@@ -12,7 +12,8 @@ export const FormContainer = styled.form`
   justify-content: center;
   align-items: center;
   @media screen and (max-width: 800px) {
-    display: none;
+    display: flex;
+    width: 50px;
   }
 `;
 
@@ -32,8 +33,8 @@ export const FormInput = styled.input`
     font-style: bold;
   }
   @media screen and (max-width: 800px) {
-    width: 70vw;
-    height: 40px;
+    width: 40vw;
+    height: 25px;
     font-size: 15px;
   }
 `;
@@ -57,6 +58,8 @@ export const SearchButton = styled.button`
     transform: translateY(-3px);
   }
   @media screen and (max-width: 800px) {
-    height: 40px;
+    height: 25px;
+    width: 48px;
+    font-size: 12px;
   }
 `;

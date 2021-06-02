@@ -23,7 +23,7 @@ export const Container = styled.div`
 export const ModalC = styled.div`
   background: black;
   color: rgb(211, 211, 211);
-  padding: 19px 10px 19px 10px;
+  display: flex;
   flex-direction: column;
   position: relative;
 `;

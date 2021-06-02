@@ -24,8 +24,8 @@ export const Header = styled.div`
   font-family: 'PT Serif', serif;
   border-bottom: 2px solid red;
   @media screen and (max-width: 800px) {
-    height: 80px;
-    margin-top: -50px;
+    height: 100px;
+    margin-top: -100px;
     border-bottom: 1px solid red;
   }
 `;

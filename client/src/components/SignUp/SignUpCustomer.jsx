@@ -18,6 +18,7 @@ import {
   ButtonSwitch,
   BgDiv,
   Bg,
+  Form,
   FormDiv,
 } from './SignUpRestaurant.styles';
 
@@ -69,16 +70,15 @@ const SignUpCustomer = ({ signup, user: { loading } }) => {
 
   return (
     <FormContainer>
-      <Header>
-        <Title>SIGN UP AS A CUSTOMER</Title>
-      </Header>
+      <Header />
 
       <Container>
         <FormDiv>
           <ButtonSwitch href="/signup/restaurant">
             <Button>Sign Up As a Restaurant </Button>
           </ButtonSwitch>
-          <form onSubmit={handleSubmit}>
+          <Title>SIGN UP AS A CUSTOMER</Title>
+          <Form onSubmit={handleSubmit}>
             <FormInput
               type="text"
               name="lastName"
@@ -149,7 +149,7 @@ const SignUpCustomer = ({ signup, user: { loading } }) => {
                 Sign In
               </a>
             </AccText>
-          </form>
+          </Form>
         </FormDiv>
         <BgDiv>
           <Bg src={bckg} />

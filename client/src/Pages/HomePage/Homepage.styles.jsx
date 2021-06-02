@@ -33,7 +33,7 @@ export const Header = styled.div`
   margin-top: 0px;
   @media screen and (max-width: 800px) {
     height: 700px;
-    margin-top: -50px;
+    margin-top: -120px;
   }
 `;
 
