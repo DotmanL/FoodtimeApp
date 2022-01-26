@@ -69,7 +69,7 @@ export const DashBoardDrop = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 150px;
+  width: auto;
   height: 190px;
   padding: 5px 10px 0px 10px;
 `;
